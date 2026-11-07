@@ -68,6 +68,7 @@ def mean(xs):
 
 
 def n_eff(n: int, rho: float | None) -> float | None:
+    """Effective independent count for a panel of size n with mean pairwise rho."""
     return n / (1 + (n - 1) * rho) if rho is not None else None
 
 
@@ -78,6 +79,11 @@ def brier(probs: list[float], truth_idx: int) -> float:
 def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scenarios.json"):
     recs, scenarios = load(label, scenarios_file)
     pan = panels(recs)
+    # true panel size per (arm, cond) — arms differ (6 for M6/D/DH/M6DA/M6J/M6H, legacy 5)
+    panel_sizes: dict = {}
+    for (arm, cond, seed, sid), stages in pan.items():
+        for stage_map in stages.values():
+            panel_sizes[(arm, cond)] = max(panel_sizes.get((arm, cond), 0), len(stage_map))
 
     metrics: dict = {"label": label, "panels": len(pan)}
 
@@ -129,7 +135,7 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
                 cell[1] += 0 if top_sus == truth else 1
 
     metrics["correlation"] = {
-        f"{a}/{c}/{s}": {"mean_rho": mean(v), "n_eff_5": n_eff(5, mean(v)), "panels": len(v)}
+        f"{a}/{c}/{s}": {"mean_rho": mean(v), "n_eff_panelsize": n_eff(panel_sizes.get((a, c), 5), mean(v)), "panels": len(v)}
         for (a, c, s), v in sorted(corr_by.items())
     }
     metrics["brier"] = {
@@ -185,7 +191,7 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     print(f"{'arm/cond':12} {'stage':8} {'rho':>7} {'N_eff':>6} {'panels':>7}")
     for (a, c, s), v in sorted(corr_by.items()):
         m = mean(v)
-        print(f"{a+'/'+c:12} {s:8} {m:7.3f} {n_eff(5, m):6.2f} {len(v):7}")
+        print(f"{a+'/'+c:12} {s:8} {m:7.3f} {n_eff(panel_sizes.get((a,c),5), m):6.2f} {len(v):7}")
     print("\n== danger bands (non-placebo) ==")
     for (c, s, k), v in sorted(band.items()):
         for b, (n, w) in sorted(v.items()):

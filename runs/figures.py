@@ -98,7 +98,7 @@ def main():
     pp = panels_from(push, scen)
     pj = panels_from(pushj, scen)
 
-    n5 = lambda rho: 5 / (1 + 4 * rho) if rho is not None else None
+    n5 = lambda rho: 6 / (1 + 5 * rho) if rho is not None else None  # all current arms are 6-member panels
 
     # fig1: N_eff initial vs final across arms/conditions (mixed arms on v1 bank)
     cells = [("M6/C1 (no discourse)", ("M6", "C1", pm)), ("M6/C2 (free)", ("M6", "C2", pm)),
