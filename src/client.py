@@ -68,18 +68,18 @@ class ModelClient:
             "max_output_tokens": max_tokens,
             "temperature": temperature,
         }
-        for attempt in range(3):
+        for attempt in range(5):
             try:
                 r = await self._http.post(f"{self.base_url}/responses", json=payload)
-            except httpx.HTTPError as e:
-                if attempt == 2:
+            except httpx.HTTPError:
+                if attempt == 4:
                     raise
-                await asyncio.sleep(2**attempt)
+                await asyncio.sleep(3 * 2**attempt)
                 continue
             if r.status_code == 200:
                 return self._extract_text(r.json())
-            if r.status_code in (429, 500, 502, 503) and attempt < 2:
-                await asyncio.sleep(2**attempt * 2)
+            if r.status_code in (429, 500, 502, 503, 504) and attempt < 4:
+                await asyncio.sleep(3 * 2**attempt)
                 continue
             raise RuntimeError(f"responses call failed {r.status_code}: {r.text[:800]}")
         raise RuntimeError("unreachable")
