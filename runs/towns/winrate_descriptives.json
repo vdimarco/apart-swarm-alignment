@@ -1,0 +1,50 @@
+{
+ "claude-town/5p/1imp": {
+  "n": 45,
+  "crew_win_rate": 0.9777777777777777
+ },
+ "claude-town/6p/1imp": {
+  "n": 45,
+  "crew_win_rate": 0.9777777777777777
+ },
+ "claude-town/6p/2imp": {
+  "n": 45,
+  "crew_win_rate": 0.5333333333333333
+ },
+ "claude-town/7p/2imp": {
+  "n": 45,
+  "crew_win_rate": 0.7777777777777778
+ },
+ "gpt-town/5p/1imp": {
+  "n": 75,
+  "crew_win_rate": 0.9333333333333333
+ },
+ "gpt-town/6p/1imp": {
+  "n": 75,
+  "crew_win_rate": 0.9466666666666667
+ },
+ "gpt-town/6p/2imp": {
+  "n": 75,
+  "crew_win_rate": 0.3466666666666667
+ },
+ "gpt-town/7p/2imp": {
+  "n": 75,
+  "crew_win_rate": 0.7066666666666667
+ },
+ "mixed/5p/1imp": {
+  "n": 30,
+  "crew_win_rate": 0.9666666666666667
+ },
+ "mixed/6p/1imp": {
+  "n": 30,
+  "crew_win_rate": 0.9333333333333333
+ },
+ "mixed/6p/2imp": {
+  "n": 30,
+  "crew_win_rate": 0.4
+ },
+ "mixed/7p/2imp": {
+  "n": 30,
+  "crew_win_rate": 0.6
+ }
+}

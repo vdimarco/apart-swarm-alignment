@@ -1,0 +1,481 @@
+{
+  "Game 4": {
+    "config": {
+      "num_players": 7,
+      "num_impostors": 2,
+      "num_common_tasks": 1,
+      "num_short_tasks": 1,
+      "num_long_tasks": 1,
+      "discussion_rounds": 3,
+      "max_num_buttons": 2,
+      "kill_cooldown": 3,
+      "max_timesteps": 40
+    },
+    "Player 1": {
+      "name": "Player 1: purple",
+      "color": "purple",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 2": {
+      "name": "Player 2: green",
+      "color": "green",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring",
+        "Clear Asteroids",
+        "Download Data"
+      ]
+    },
+    "Player 3": {
+      "name": "Player 3: blue",
+      "color": "blue",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 4": {
+      "name": "Player 4: pink",
+      "color": "pink",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring",
+        "Accept Diverted Power",
+        "Inspect Sample"
+      ]
+    },
+    "Player 5": {
+      "name": "Player 5: lime",
+      "color": "lime",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Accept Diverted Power",
+        "Fuel Engines",
+        "Fix Wiring"
+      ]
+    },
+    "Player 6": {
+      "name": "Player 6: yellow",
+      "color": "yellow",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Accept Diverted Power",
+        "Fix Wiring",
+        "Empty Chute"
+      ]
+    },
+    "Player 7": {
+      "name": "Player 7: black",
+      "color": "black",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Align Engine Output",
+        "Fix Wiring",
+        "Submit Scan"
+      ]
+    },
+    "winner": 1,
+    "winner_reason": "Impostors win! (Crewmates being outnumbered or tied to impostors))"
+  }
+}{
+  "Game 3": {
+    "config": {
+      "num_players": 7,
+      "num_impostors": 2,
+      "num_common_tasks": 1,
+      "num_short_tasks": 1,
+      "num_long_tasks": 1,
+      "discussion_rounds": 3,
+      "max_num_buttons": 2,
+      "kill_cooldown": 3,
+      "max_timesteps": 40
+    },
+    "Player 1": {
+      "name": "Player 1: black",
+      "color": "black",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring",
+        "Align Engine Output",
+        "Accept Diverted Power"
+      ]
+    },
+    "Player 2": {
+      "name": "Player 2: red",
+      "color": "red",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 3": {
+      "name": "Player 3: green",
+      "color": "green",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fuel Engines",
+        "Stabilize Steering",
+        "Fix Wiring"
+      ]
+    },
+    "Player 4": {
+      "name": "Player 4: white",
+      "color": "white",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fuel Engines",
+        "Fix Wiring",
+        "Upload Data"
+      ]
+    },
+    "Player 5": {
+      "name": "Player 5: purple",
+      "color": "purple",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring",
+        "Empty Chute",
+        "Chart Course"
+      ]
+    },
+    "Player 6": {
+      "name": "Player 6: blue",
+      "color": "blue",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 7": {
+      "name": "Player 7: yellow",
+      "color": "yellow",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Accept Diverted Power",
+        "Inspect Sample",
+        "Fix Wiring"
+      ]
+    },
+    "winner": 1,
+    "winner_reason": "Impostors win! (Crewmates being outnumbered or tied to impostors))"
+  }
+}{
+  "Game 1": {
+    "config": {
+      "num_players": 7,
+      "num_impostors": 2,
+      "num_common_tasks": 1,
+      "num_short_tasks": 1,
+      "num_long_tasks": 1,
+      "discussion_rounds": 3,
+      "max_num_buttons": 2,
+      "kill_cooldown": 3,
+      "max_timesteps": 40
+    },
+    "Player 1": {
+      "name": "Player 1: green",
+      "color": "green",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 2": {
+      "name": "Player 2: brown",
+      "color": "brown",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fuel Engines",
+        "Fix Wiring",
+        "Upload Data"
+      ]
+    },
+    "Player 3": {
+      "name": "Player 3: yellow",
+      "color": "yellow",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring",
+        "Download Data",
+        "Empty Garbage"
+      ]
+    },
+    "Player 4": {
+      "name": "Player 4: white",
+      "color": "white",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Start Reactor",
+        "Submit Scan",
+        "Fix Wiring"
+      ]
+    },
+    "Player 5": {
+      "name": "Player 5: cyan",
+      "color": "cyan",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Download Data",
+        "Empty Chute",
+        "Fix Wiring"
+      ]
+    },
+    "Player 6": {
+      "name": "Player 6: red",
+      "color": "red",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Fix Wiring"
+      ]
+    },
+    "Player 7": {
+      "name": "Player 7: blue",
+      "color": "blue",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Align Engine Output",
+        "Accept Diverted Power",
+        "Fix Wiring"
+      ]
+    },
+    "winner": 1,
+    "winner_reason": "Impostors win! (Crewmates being outnumbered or tied to impostors))"
+  }
+}{
+  "Game 5": {
+    "config": {
+      "num_players": 7,
+      "num_impostors": 2,
+      "num_common_tasks": 1,
+      "num_short_tasks": 1,
+      "num_long_tasks": 1,
+      "discussion_rounds": 3,
+      "max_num_buttons": 2,
+      "kill_cooldown": 3,
+      "max_timesteps": 40
+    },
+    "Player 1": {
+      "name": "Player 1: cyan",
+      "color": "cyan",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Start Reactor",
+        "Swipe Card",
+        "Chart Course"
+      ]
+    },
+    "Player 2": {
+      "name": "Player 2: yellow",
+      "color": "yellow",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Swipe Card",
+        "Download Data",
+        "Align Engine Output"
+      ]
+    },
+    "Player 3": {
+      "name": "Player 3: black",
+      "color": "black",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Accept Diverted Power",
+        "Clear Asteroids",
+        "Swipe Card"
+      ]
+    },
+    "Player 4": {
+      "name": "Player 4: brown",
+      "color": "brown",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Swipe Card",
+        "Empty Chute",
+        "Download Data"
+      ]
+    },
+    "Player 5": {
+      "name": "Player 5: white",
+      "color": "white",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Swipe Card",
+        "Fuel Engines",
+        "Accept Diverted Power"
+      ]
+    },
+    "Player 6": {
+      "name": "Player 6: orange",
+      "color": "orange",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Swipe Card"
+      ]
+    },
+    "Player 7": {
+      "name": "Player 7: pink",
+      "color": "pink",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Swipe Card"
+      ]
+    },
+    "winner": 2,
+    "winner_reason": "Crewmates win! (Impostors eliminated)"
+  }
+}{
+  "Game 2": {
+    "config": {
+      "num_players": 7,
+      "num_impostors": 2,
+      "num_common_tasks": 1,
+      "num_short_tasks": 1,
+      "num_long_tasks": 1,
+      "discussion_rounds": 3,
+      "max_num_buttons": 2,
+      "kill_cooldown": 3,
+      "max_timesteps": 40
+    },
+    "Player 1": {
+      "name": "Player 1: lime",
+      "color": "lime",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Swipe Card",
+        "Fuel Engines",
+        "Unlock Manifolds"
+      ]
+    },
+    "Player 2": {
+      "name": "Player 2: blue",
+      "color": "blue",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Swipe Card"
+      ]
+    },
+    "Player 3": {
+      "name": "Player 3: black",
+      "color": "black",
+      "identity": "Impostor",
+      "model": "claude-sonnet-4-6",
+      "personality": null,
+      "tasks": [
+        "Swipe Card"
+      ]
+    },
+    "Player 4": {
+      "name": "Player 4: cyan",
+      "color": "cyan",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Clean O2 Filter",
+        "Swipe Card",
+        "Align Engine Output"
+      ]
+    },
+    "Player 5": {
+      "name": "Player 5: purple",
+      "color": "purple",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Fuel Engines",
+        "Accept Diverted Power",
+        "Swipe Card"
+      ]
+    },
+    "Player 6": {
+      "name": "Player 6: white",
+      "color": "white",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Divert Power",
+        "Swipe Card",
+        "Start Reactor"
+      ]
+    },
+    "Player 7": {
+      "name": "Player 7: green",
+      "color": "green",
+      "identity": "Crewmate",
+      "model": "gpt-5.4-mini-reasoning",
+      "personality": null,
+      "tasks": [
+        "Inspect Sample",
+        "Stabilize Steering",
+        "Swipe Card"
+      ]
+    },
+    "winner": 3,
+    "winner_reason": "Crewmates win! (All task completed)"
+  }
+}
