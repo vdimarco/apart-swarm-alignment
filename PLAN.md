@@ -75,6 +75,8 @@ Model-family assignment for arms A/B — decision lands once `python -m src.clie
 
 This is the design the user already green-lit via structured Q&A (2026-11-07): A-as-core + small addition; full design in session, summarized in the spec. Design doc (when written) lives at `docs/superpowers/specs/2026-11-07-lock-before-you-talk-design.md` and is the traceable artifact for the Plan of Record.
 
+User tip logged: **Adaption connects directly to Hugging Face** (datasets API). Confirmed full `/models` on this key still shows only the 7 platform models — arm assignment stands (no model expansion). HF access is for W2 (provenance/data mirror of towns logs + scenario bank via Adaption datasets) and possibly ingesting the gated AI Village transcripts if approval lands in time — parked, not on critical path.
+
 ## Confirmed Decisions
 
 - [x] Direction: package towns analysis as core + one fresh controlled experiment

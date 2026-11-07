@@ -104,14 +104,18 @@ def analyze(label: str, bootstrap_reps: int = 2000):
         truth = sc["ground_truth"]
         truth_idx = suspects.index(truth) if truth else None
         for stage in ("initial", "final"):
-            agents = {i: vec(r, suspects) for i, r in stages.get(stage, {}).items() if r.get("probs")}
+            agents = {
+                i: v for i, r in stages.get(stage, {}).items()
+                if (v := vec(r, suspects)) is not None
+            }
             if len(agents) < 2:
                 continue
             rho = mean(pair_corrs(agents))
             if rho is not None:
                 corr_by[(arm, cond, stage)].append(rho)
             if truth_idx is not None:
-                mv = [mean([agents[i][k] for i in agents]) for k in range(len(suspects))]
+                n_ag = len(agents)
+                mv = [sum(agents[i][k] for i in agents) / n_ag for k in range(len(suspects))]
                 brier_by[(arm, cond, stage, sc["kind"])].append(brier(mv, truth_idx))
                 uniform_by[(arm, cond, stage, sc["kind"])].append(brier([1 / len(suspects)] * len(suspects), truth_idx))
                 votes = defaultdict(int)
@@ -143,9 +147,11 @@ def analyze(label: str, bootstrap_reps: int = 2000):
     for (arm, cond, seed, sid), stages in pan.items():
         if arm != "M":
             continue
+        m_suspects = [s["name"] for s in scenarios[sid]["suspects"]]
         agents = {
-            i: (r["model"], vec(r, scenarios[sid]["suspects"] and [s["name"] for s in scenarios[sid]["suspects"]]))
-            for i, r in stages.get("initial", {}).items() if r.get("probs")
+            i: (r["model"], v)
+            for i, r in stages.get("initial", {}).items()
+            if (v := vec(r, m_suspects)) is not None
         }
         for i, j in combinations(sorted(agents), 2):
             c = pearson(agents[i][1], agents[j][1])
@@ -158,9 +164,9 @@ def analyze(label: str, bootstrap_reps: int = 2000):
         rng = random.Random(7)
         boots = []
         for _ in range(bootstrap_reps):
-            s1 = mean(rng.choices(same_rhos, k=len(same_rhos)))
-            s2 = mean(rng.choices(cross_rhos, k=len(cross_rhos)))
-            boots.append(s1 - s2)
+            x1 = rng.choices(same_rhos, k=len(same_rhos))
+            x2 = rng.choices(cross_rhos, k=len(cross_rhos))
+            boots.append(sum(x1) / len(x1) - sum(x2) / len(x2))
         boots.sort()
         ci = (boots[int(0.025 * len(boots))], boots[int(0.975 * len(boots))])
     metrics["h3_same_vs_cross_family"] = {
