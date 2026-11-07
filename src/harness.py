@@ -155,15 +155,17 @@ async def run_panel(
     log_fh,
     verbose: bool = False,
 ) -> int:
-    fam_a, fam_b = cfg["family_a_model"], cfg["family_b_model"]
-    panel_size = cfg["panel_size"]
+    fam_a, fam_b = cfg.get("family_a_model"), cfg.get("family_b_model")
     mapping = cfg["arms"][arm]
-    if mapping == "family_a":
-        models = [fam_a] * panel_size
+    if isinstance(mapping, list):
+        models = mapping  # explicit per-arm model roster (e.g. 6-way mixed arm)
+    elif mapping == "family_a":
+        models = [fam_a] * cfg["panel_size"]
     elif mapping == "family_b":
-        models = [fam_b] * panel_size
+        models = [fam_b] * cfg["panel_size"]
     else:
-        models = [fam_a] * (panel_size - panel_size // 2) + [fam_b] * (panel_size // 2)
+        models = [fam_a] * (cfg["panel_size"] - cfg["panel_size"] // 2) + [fam_b] * (cfg["panel_size"] // 2)
+    panel_size = len(models)
     framing = {"C1": C1_FRAMING, "C2": C2_FRAMING, "C3": C3_FRAMING}[cond]
     suspects = [s.name for s in scenario.suspects]
     n_calls = 0
