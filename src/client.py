@@ -54,7 +54,7 @@ class ModelClient:
         model: str,
         system: str,
         messages: list[dict],
-        max_tokens: int = 800,
+        max_tokens: int = 5000,
         temperature: float = 1.0,
     ) -> str:
         """messages: [{'role': 'user'|'assistant', 'content': str}, ...]"""
@@ -86,17 +86,25 @@ class ModelClient:
 
     @staticmethod
     def _extract_text(data: dict) -> str:
+        # reasoning models may leave output_text empty when the token budget
+        # is consumed by reasoning; prefer the first non-empty content part
+        candidates = []
         if isinstance(data.get("output_text"), str):
-            return data["output_text"]
+            candidates.append(data["output_text"])
         for item in data.get("output") or []:
             if item.get("type") == "message":
                 for part in item.get("content") or []:
                     if part.get("type") in ("output_text", "text") and isinstance(part.get("text"), str):
-                        return part["text"]
+                        candidates.append(part["text"])
         if isinstance(data.get("choices"), list) and data["choices"]:
             msg = data["choices"][0].get("message", {})
             if isinstance(msg.get("content"), str):
-                return msg["content"]
+                candidates.append(msg["content"])
+        for c in candidates:
+            if c.strip():
+                return c
+        if candidates:
+            return candidates[0]
         raise RuntimeError(f"could not extract text from response keys={list(data)[:10]}")
 
 
@@ -116,7 +124,7 @@ def main() -> None:
                 text = await client.complete(
                     args.ping, "Reply concisely.",
                     [{"role": "user", "content": "Say 'pong' and nothing else."}],
-                    max_tokens=16, temperature=0.0,
+                    max_tokens=512, temperature=0.0,
                 )
                 print(repr(text))
         finally:

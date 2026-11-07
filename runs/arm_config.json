@@ -1,0 +1,19 @@
+{
+  "family_a_model": "qwen3.5-397b",
+  "family_b_model": "glm-5.2",
+  "panel_size": 5,
+  "seeds": 3,
+  "conditions": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "arms": {
+    "A": "family_a",
+    "B": "family_b",
+    "M": "mixed"
+  },
+  "temperature": 1.0,
+  "max_concurrency": 16,
+  "include_placebo": true
+}

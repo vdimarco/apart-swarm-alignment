@@ -19,7 +19,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from .client import ModelClient
-from .scenarios import Scenario, render_text
+from .scenarios import Scenario, Suspect, render_text
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
@@ -191,7 +191,7 @@ async def run_panel(
 
     # stage: initial (concurrent across agents)
     initial = await asyncio.gather(*[
-        stage_call("initial", i, SYSTEM_ESTIMATE, estimate_prompt(scenario, framing), 500)
+        stage_call("initial", i, SYSTEM_ESTIMATE, estimate_prompt(scenario, framing), 5000)
         for i in range(panel_size)
     ])
     if cond == "C1":
@@ -199,7 +199,7 @@ async def run_panel(
 
     # stage: statements (concurrent)
     statements = await asyncio.gather(*[
-        stage_call("statement", i, SYSTEM_DISCUSS, statement_prompt(scenario, framing), 400,
+        stage_call("statement", i, SYSTEM_DISCUSS, statement_prompt(scenario, framing), 3000,
                    expect_probs=False)
         for i in range(panel_size)
     ])
@@ -209,7 +209,7 @@ async def run_panel(
     replies = await asyncio.gather(*[
         stage_call("reply", i, SYSTEM_DISCUSS,
                    reply_prompt(scenario, [t for j, t in enumerate(texts) if j != i], texts[i], framing),
-                   400, expect_probs=False)
+                   3000, expect_probs=False)
         for i in range(panel_size)
     ])
 
@@ -218,7 +218,7 @@ async def run_panel(
     transcript += [(f"Councilor {i+1} (reply)", (r["raw"] if r else "")) for i, r in enumerate(replies)]
 
     await asyncio.gather(*[
-        stage_call("final", i, SYSTEM_ESTIMATE, final_prompt(scenario, transcript, framing), 500)
+        stage_call("final", i, SYSTEM_ESTIMATE, final_prompt(scenario, transcript, framing), 5000)
         for i in range(panel_size)
     ])
     return n_calls
@@ -226,7 +226,10 @@ async def run_panel(
 
 async def main_async(args) -> None:
     cfg = json.loads(Path(args.config).read_text())
-    scenarios = [Scenario(**s) for s in json.loads(Path(args.scenarios).read_text())]
+    scenarios = [
+        Scenario(**{**s, "suspects": [Suspect(**x) for x in s["suspects"]]})
+        for s in json.loads(Path(args.scenarios).read_text())
+    ]
     if not cfg.get("include_placebo", True):
         scenarios = [s for s in scenarios if s.kind != "placebo"]
     if args.limit:
