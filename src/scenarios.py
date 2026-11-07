@@ -126,6 +126,41 @@ def _gen_hard_one(seed: int, idx: int) -> Scenario:
     raise RuntimeError(f"could not generate hard adversarial idx={idx}")
 
 
+def render_subset(s: Scenario, keep: list[int]) -> str:
+    """Case-file render showing only a subset of clues (evidence jigsaw)."""
+    lines = [
+        f"# {s.title}",
+        "",
+        s.story,
+        "",
+        f"The council has named {len(s.suspects)} suspects.",
+        "",
+        "SUSPECTS",
+        *[_render_suspect_line(x) for x in s.suspects],
+        "",
+        "WITNESS STATEMENTS (those you have personally reviewed)",
+        *[f"- {s.clues[k]}" for k in sorted(keep)],
+    ]
+    return "\n".join(lines)
+
+
+def clue_partition(n_clues: int, n_agents: int, seed_key: int, copies: int = 3) -> list[list[int]]:
+    """Each clue is seen by `copies` agents, round-robin on a shuffled order.
+
+    Deterministic per (scenario, seed) so runs are reproducible.
+    """
+    import random as _r
+    rr = _r.Random(seed_key)
+    order = list(range(n_clues))
+    rr.shuffle(order)
+    groups: list[list[int]] = [[] for _ in range(n_agents)]
+    copies = min(copies, n_agents)
+    for pos, ci in enumerate(order):
+        for g in range(copies):
+            groups[(pos * copies + g) % n_agents].append(ci)
+    return [sorted(g) for g in groups]
+
+
 @dataclass
 class Suspect:
     name: str

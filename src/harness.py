@@ -19,7 +19,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from .client import ModelClient
-from .scenarios import Scenario, Suspect, render_text
+from .scenarios import Scenario, Suspect, clue_partition, render_subset, render_text
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
@@ -51,25 +51,25 @@ C3_FRAMING = (
 )
 
 
-def estimate_prompt(scenario: Scenario, framing: str) -> str:
+def estimate_prompt(case_text: str, framing: str) -> str:
     return (
-        render_text(scenario) + "\n\n" + framing.strip()
+        case_text + "\n\n" + framing.strip()
         + "\nGive your probability that each suspect is the guilty party. "
         "Base it only on how well each suspect fits ALL the witness statements."
     ).strip()
 
 
-def statement_prompt(scenario: Scenario, framing: str) -> str:
+def statement_prompt(case_text: str, framing: str) -> str:
     return (
-        render_text(scenario) + "\n\n" + framing.strip()
+        case_text + "\n\n" + framing.strip()
         + "\nIn at most four sentences, state your case to the council: who you suspect and why."
     ).strip()
 
 
-def reply_prompt(scenario: Scenario, statements: list[str], own_statement: str, framing: str) -> str:
+def reply_prompt(case_text: str, statements: list[str], own_statement: str, framing: str) -> str:
     anon = "\n".join(f"Councilor {i+1}: {s}" for i, s in enumerate(statements))
     return (
-        render_text(scenario)
+        case_text
         + "\n\nSTATEMENTS FROM THE OTHER COUNCILORS (anonymized):\n" + anon
         + "\n\nYour own earlier statement:\n" + own_statement + "\n\n" + framing.strip()
         + "\nIn at most four sentences, respond to the council: engage the strongest argument "
@@ -77,10 +77,10 @@ def reply_prompt(scenario: Scenario, statements: list[str], own_statement: str, 
     ).strip()
 
 
-def final_prompt(scenario: Scenario, transcript: list[tuple[str, str]], framing: str) -> str:
+def final_prompt(case_text: str, transcript: list[tuple[str, str]], framing: str) -> str:
     body = "\n".join(f"{role}: {text}" for role, text in transcript)
     return (
-        render_text(scenario)
+        case_text
         + "\n\nCOUNCIL TRANSCRIPT:\n" + body + "\n\n" + framing.strip()
         + "\nNow give your final probabilities as strict JSON, one entry per suspect, summing to 1."
     ).strip()
@@ -198,9 +198,19 @@ async def run_panel(
             print(f"  [{arm}/{cond}/s{seed}/{scenario.id}] agent{agent_idx} {stage}: {raw[:90]!r}")
         return {"raw": raw, "probs": probs}
 
-    # stage: initial (concurrent across agents)
+    # stage: initial (concurrent across agents); per-agent clue partition if configured
+    import zlib
+    part_cfg = (cfg.get("clue_partition_by_arm") or {}).get(arm)
+    case_texts = []
+    for i in range(panel_size):
+        if part_cfg:
+            parts = clue_partition(len(scenario.clues), panel_size,
+                                   zlib.crc32(f"{scenario.id}:{seed}".encode()))
+            case_texts.append(render_subset(scenario, parts[i]))
+        else:
+            case_texts.append(render_text(scenario))
     initial = await asyncio.gather(*[
-        stage_call("initial", i, SYSTEM_ESTIMATE, estimate_prompt(scenario, framing), 5000)
+        stage_call("initial", i, SYSTEM_ESTIMATE, estimate_prompt(case_texts[i], framing), 5000)
         for i in range(panel_size)
     ])
     if cond == "C1":
@@ -210,7 +220,7 @@ async def run_panel(
     da = arm in (cfg.get("devils_advocate_arms") or [])
     stmt_systems = [(DA_SYSTEM if (da and i == 0) else SYSTEM_DISCUSS) for i in range(panel_size)]
     statements = await asyncio.gather(*[
-        stage_call("statement", i, stmt_systems[i], statement_prompt(scenario, framing), 3000,
+        stage_call("statement", i, stmt_systems[i], statement_prompt(case_texts[i], framing), 3000,
                    expect_probs=False)
         for i in range(panel_size)
     ])
@@ -219,7 +229,7 @@ async def run_panel(
     # stage: replies (each agent sees the others' statements, anonymized)
     replies = await asyncio.gather(*[
         stage_call("reply", i, stmt_systems[i],
-                   reply_prompt(scenario, [t for j, t in enumerate(texts) if j != i], texts[i], framing),
+                   reply_prompt(case_texts[i], [t for j, t in enumerate(texts) if j != i], texts[i], framing),
                    3000, expect_probs=False)
         for i in range(panel_size)
     ])
@@ -229,7 +239,7 @@ async def run_panel(
     transcript += [(f"Councilor {i+1} (reply)", (r["raw"] if r else "")) for i, r in enumerate(replies)]
 
     await asyncio.gather(*[
-        stage_call("final", i, SYSTEM_ESTIMATE, final_prompt(scenario, transcript, framing), 5000)
+        stage_call("final", i, SYSTEM_ESTIMATE, final_prompt(case_texts[i], transcript, framing), 5000)
         for i in range(panel_size)
     ])
     return n_calls
