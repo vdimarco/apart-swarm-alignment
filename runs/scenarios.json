@@ -1,0 +1,4632 @@
+[
+  {
+    "id": "C00",
+    "kind": "consistent",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "large_dog",
+          "white_gloves",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "cotter",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a large grey dog heading toward the old fence that night.",
+      "Several villagers insist they saw someone with white gloves heading toward the orchard gate that night.",
+      "the gatekeeper saw someone with a heavy limp near the well that night."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "white_gloves",
+      "heavy_limp"
+    ],
+    "loud_traits": [
+      "large_dog",
+      "white_gloves"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C01",
+    "kind": "consistent",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "blacksmith",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "schoolteacher",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with white gloves heading toward the granary steps that night.",
+      "Sister Mellis is certain: whoever it was, it was someone with a tall felt hat. It was said twice before breakfast.",
+      "Widow Ferne saw someone with an oil lantern near the mill bridge that night."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "tall_hat",
+      "oil_lantern"
+    ],
+    "loud_traits": [
+      "white_gloves",
+      "tall_hat"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C02",
+    "kind": "consistent",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "midwife",
+        "traits": [
+          "green_coat",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "miller",
+        "traits": [
+          "tall_hat",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with an apron dusted with flour heading toward the tannery lane that night.",
+      "Both the candlemaker and the mill hand swear the figure they saw was someone with a green raincoat.",
+      "Old Tomas told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "green_coat",
+      "red_scarf"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "green_coat"
+    ],
+    "ground_truth": "Pavel",
+    "decoy": null
+  },
+  {
+    "id": "C03",
+    "kind": "consistent",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "green_coat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "green_coat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "schoolteacher",
+        "traits": [
+          "heavy_limp",
+          "wooden_flute",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Both Widow Ferne and the gatekeeper swear the figure they saw was someone with a tall felt hat.",
+      "At the inn, three people separately described someone with a red wool scarf crossing the tannery lane.",
+      "Widow Ferne told the council the figure was someone with a heavy limp."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "red_scarf",
+      "heavy_limp"
+    ],
+    "loud_traits": [
+      "tall_hat",
+      "red_scarf"
+    ],
+    "ground_truth": "Pavel",
+    "decoy": null
+  },
+  {
+    "id": "C04",
+    "kind": "consistent",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Cora",
+        "role": "baker",
+        "traits": [
+          "wooden_flute",
+          "tall_hat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "shepherd",
+        "traits": [
+          "green_coat",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "clerk",
+        "traits": [
+          "red_scarf",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "red_scarf",
+          "wooden_flute"
+        ]
+      }
+    ],
+    "clues": [
+      "Sister Mellis is certain: whoever it was, it was someone with a wooden flute. It was said twice before breakfast.",
+      "Sister Mellis is certain: whoever it was, it was someone with a tall felt hat. It was said twice before breakfast.",
+      "the gatekeeper saw someone with a large grey dog near the mill bridge that night."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "tall_hat",
+      "large_dog"
+    ],
+    "loud_traits": [
+      "wooden_flute",
+      "tall_hat"
+    ],
+    "ground_truth": "Cora",
+    "decoy": null
+  },
+  {
+    "id": "C05",
+    "kind": "consistent",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "blacksmith",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "baker",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "clerk",
+        "traits": [
+          "white_gloves",
+          "oil_lantern",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "wooden_flute",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with a wooden flute crossing the granary steps.",
+      "Several villagers insist they saw someone with a heavy limp heading toward the mill bridge that night.",
+      "Old Tomas saw someone with white gloves near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "heavy_limp",
+      "white_gloves"
+    ],
+    "loud_traits": [
+      "wooden_flute",
+      "heavy_limp"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C06",
+    "kind": "consistent",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Joss",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "miller",
+        "traits": [
+          "green_coat",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "flour_apron",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with an oil lantern crossing the market square.",
+      "At the inn, three people separately described someone with a red wool scarf crossing the market square.",
+      "a travelling tinker told the council the figure was someone with an apron dusted with flour."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "red_scarf",
+      "flour_apron"
+    ],
+    "loud_traits": [
+      "oil_lantern",
+      "red_scarf"
+    ],
+    "ground_truth": "Dain",
+    "decoy": null
+  },
+  {
+    "id": "C07",
+    "kind": "consistent",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "large_dog",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "shepherd",
+        "traits": [
+          "flour_apron",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a red wool scarf heading toward the granary steps that night.",
+      "Widow Ferne is certain: whoever it was, it was someone with an apron dusted with flour. It was said twice before breakfast.",
+      "Young Piotr told the council the figure was someone with white gloves."
+    ],
+    "clue_traits": [
+      "red_scarf",
+      "flour_apron",
+      "white_gloves"
+    ],
+    "loud_traits": [
+      "red_scarf",
+      "flour_apron"
+    ],
+    "ground_truth": "Pavel",
+    "decoy": null
+  },
+  {
+    "id": "C08",
+    "kind": "consistent",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Kael",
+        "role": "brewer",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "clerk",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "blacksmith",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "miller",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with white gloves crossing the old fence.",
+      "At the inn, three people separately described someone with a wooden flute crossing the orchard gate.",
+      "a travelling tinker told the council the figure was someone with a tall felt hat."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "wooden_flute",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "white_gloves",
+      "wooden_flute"
+    ],
+    "ground_truth": "Kael",
+    "decoy": null
+  },
+  {
+    "id": "C09",
+    "kind": "consistent",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "red_scarf",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "green_coat",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "large_dog",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "cotter",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with an oil lantern heading toward the orchard gate that night.",
+      "Several villagers insist they saw someone with a heavy limp heading toward the chapel yard that night.",
+      "Young Piotr saw someone with white gloves near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "heavy_limp",
+      "white_gloves"
+    ],
+    "loud_traits": [
+      "oil_lantern",
+      "heavy_limp"
+    ],
+    "ground_truth": "Mira",
+    "decoy": null
+  },
+  {
+    "id": "C10",
+    "kind": "consistent",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Joss",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "white_gloves",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "clerk",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "midwife",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "baker",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a tall felt hat heading toward the old fence that night.",
+      "Both Old Tomas and the gatekeeper swear the figure they saw was someone with a brass gate key.",
+      "a travelling tinker saw someone with an apron dusted with flour near the old fence that night."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "brass_key",
+      "flour_apron"
+    ],
+    "loud_traits": [
+      "tall_hat",
+      "brass_key"
+    ],
+    "ground_truth": "Elsa",
+    "decoy": null
+  },
+  {
+    "id": "C11",
+    "kind": "consistent",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "cotter",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Widow Ferne is certain: whoever it was, it was someone with a heavy limp. It was said twice before breakfast.",
+      "Old Tomas is certain: whoever it was, it was someone with an oil lantern. It was said twice before breakfast.",
+      "the candlemaker saw someone with a tall felt hat near the chapel yard that night."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "oil_lantern",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "heavy_limp",
+      "oil_lantern"
+    ],
+    "ground_truth": "Dain",
+    "decoy": null
+  },
+  {
+    "id": "C12",
+    "kind": "consistent",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Mira",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "brewer",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a large grey dog heading toward the well that night.",
+      "Several villagers insist they saw someone with an apron dusted with flour heading toward the market square that night.",
+      "the gatekeeper saw someone with a heavy limp near the mill bridge that night."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "flour_apron",
+      "heavy_limp"
+    ],
+    "loud_traits": [
+      "large_dog",
+      "flour_apron"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C13",
+    "kind": "consistent",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Nils",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "midwife",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "large_dog",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "schoolteacher",
+        "traits": [
+          "brass_key",
+          "heavy_limp",
+          "large_dog"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a brass gate key heading toward the mill bridge that night.",
+      "At the inn, three people separately described someone with white gloves crossing the mill bridge.",
+      "the candlemaker told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "brass_key",
+      "white_gloves",
+      "red_scarf"
+    ],
+    "loud_traits": [
+      "brass_key",
+      "white_gloves"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C14",
+    "kind": "consistent",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "flour_apron",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "baker",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "clerk",
+        "traits": [
+          "large_dog",
+          "wooden_flute",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "flour_apron",
+          "tall_hat",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with an apron dusted with flour heading toward the market square that night.",
+      "Sister Mellis is certain: whoever it was, it was someone with a tall felt hat. It was said twice before breakfast.",
+      "the mill hand saw someone with a brass gate key near the market square that night."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "tall_hat",
+      "brass_key"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "tall_hat"
+    ],
+    "ground_truth": "Amara",
+    "decoy": null
+  },
+  {
+    "id": "C15",
+    "kind": "consistent",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Fen",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "heavy_limp",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with white gloves crossing the chapel yard.",
+      "Both the gatekeeper and a travelling tinker swear the figure they saw was someone with a tall felt hat.",
+      "Widow Ferne told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "tall_hat",
+      "red_scarf"
+    ],
+    "loud_traits": [
+      "white_gloves",
+      "tall_hat"
+    ],
+    "ground_truth": "Kael",
+    "decoy": null
+  },
+  {
+    "id": "C16",
+    "kind": "consistent",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "large_dog",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "green_coat",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "schoolteacher",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "red_scarf"
+        ]
+      }
+    ],
+    "clues": [
+      "the gatekeeper is certain: whoever it was, it was someone with a wooden flute. It was said twice before breakfast.",
+      "Several villagers insist they saw someone with an apron dusted with flour heading toward the tannery lane that night.",
+      "the candlemaker saw someone with a red wool scarf near the orchard gate that night."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "flour_apron",
+      "red_scarf"
+    ],
+    "loud_traits": [
+      "wooden_flute",
+      "flour_apron"
+    ],
+    "ground_truth": "Ida",
+    "decoy": null
+  },
+  {
+    "id": "C17",
+    "kind": "consistent",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "tall_hat",
+          "oil_lantern",
+          "wooden_flute"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with an oil lantern crossing the market square.",
+      "Several villagers insist they saw someone with a green raincoat heading toward the old fence that night.",
+      "Old Tomas told the council the figure was someone with a tall felt hat."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "green_coat",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "oil_lantern",
+      "green_coat"
+    ],
+    "ground_truth": "Bram",
+    "decoy": null
+  },
+  {
+    "id": "C18",
+    "kind": "consistent",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "watchman",
+        "traits": [
+          "heavy_limp",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "schoolteacher",
+        "traits": [
+          "brass_key",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "clerk",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a heavy limp heading toward the granary steps that night.",
+      "Both Young Piotr and Old Tomas swear the figure they saw was someone with a green raincoat.",
+      "Young Piotr saw someone with a tall felt hat near the well that night."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "green_coat",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "heavy_limp",
+      "green_coat"
+    ],
+    "ground_truth": "Dain",
+    "decoy": null
+  },
+  {
+    "id": "C19",
+    "kind": "consistent",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Amara",
+        "role": "blacksmith",
+        "traits": [
+          "green_coat",
+          "white_gloves",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "midwife",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "large_dog",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker is certain: whoever it was, it was someone with a heavy limp. It was said twice before breakfast.",
+      "the candlemaker is certain: whoever it was, it was someone with a tall felt hat. It was said twice before breakfast.",
+      "the mill hand told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "tall_hat",
+      "red_scarf"
+    ],
+    "loud_traits": [
+      "heavy_limp",
+      "tall_hat"
+    ],
+    "ground_truth": "Cora",
+    "decoy": null
+  },
+  {
+    "id": "A00",
+    "kind": "adversarial",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "schoolteacher",
+        "traits": [
+          "green_coat",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "brewer",
+        "traits": [
+          "red_scarf",
+          "heavy_limp",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with a tall felt hat crossing the chapel yard.",
+      "Both the mill hand and the gatekeeper swear the figure they saw was someone with a tall felt hat.",
+      "the gatekeeper told the council the figure was someone with a wooden flute.",
+      "Only Old Tomas remarked on it at all: someone with an oil lantern, seen by the mill bridge."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "tall_hat",
+      "wooden_flute",
+      "oil_lantern"
+    ],
+    "loud_traits": [
+      "tall_hat",
+      "wooden_flute"
+    ],
+    "ground_truth": "Pavel",
+    "decoy": "Dain"
+  },
+  {
+    "id": "A01",
+    "kind": "adversarial",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Fen",
+        "role": "midwife",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "watchman",
+        "traits": [
+          "heavy_limp",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "clerk",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with a large grey dog heading toward the well that night.",
+      "Both Old Tomas and Sister Mellis swear the figure they saw was someone with a large grey dog.",
+      "Old Tomas saw someone with a red wool scarf near the old fence that night.",
+      "One villager mentioned, almost as an afterthought, someone with a heavy limp by the market square."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "large_dog",
+      "red_scarf",
+      "heavy_limp"
+    ],
+    "loud_traits": [
+      "large_dog",
+      "red_scarf"
+    ],
+    "ground_truth": "Joss",
+    "decoy": "Amara"
+  },
+  {
+    "id": "A02",
+    "kind": "adversarial",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "oil_lantern",
+          "white_gloves",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "miller",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with an apron dusted with flour heading toward the market square that night.",
+      "Sister Mellis is certain: whoever it was, it was someone with an apron dusted with flour. It was said twice before breakfast.",
+      "the mill hand told the council the figure was someone with a red wool scarf.",
+      "One villager mentioned, almost as an afterthought, someone with a tall felt hat by the chapel yard."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "red_scarf",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "red_scarf"
+    ],
+    "ground_truth": "Nils",
+    "decoy": "Mira"
+  },
+  {
+    "id": "A03",
+    "kind": "adversarial",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Bram",
+        "role": "schoolteacher",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "baker",
+        "traits": [
+          "white_gloves",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "blacksmith",
+        "traits": [
+          "heavy_limp",
+          "red_scarf",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "large_dog",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "the mill hand is certain: whoever it was, it was someone with an oil lantern. It was said twice before breakfast.",
+      "Several villagers insist they saw someone with an oil lantern heading toward the granary steps that night.",
+      "Old Tomas told the council the figure was someone with a red wool scarf.",
+      "One villager mentioned, almost as an afterthought, someone with a tall felt hat by the old fence."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "oil_lantern",
+      "red_scarf",
+      "tall_hat"
+    ],
+    "loud_traits": [
+      "oil_lantern",
+      "red_scarf"
+    ],
+    "ground_truth": "Cora",
+    "decoy": "Bram"
+  },
+  {
+    "id": "A04",
+    "kind": "adversarial",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Dain",
+        "role": "cotter",
+        "traits": [
+          "flour_apron",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "red_scarf",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with an apron dusted with flour crossing the market square.",
+      "At the inn, three people separately described someone with an apron dusted with flour crossing the chapel yard.",
+      "Sister Mellis told the council the figure was someone with a red wool scarf.",
+      "One villager mentioned, almost as an afterthought, someone with an oil lantern by the granary steps."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "red_scarf",
+      "oil_lantern"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "red_scarf"
+    ],
+    "ground_truth": "Pavel",
+    "decoy": "Dain"
+  },
+  {
+    "id": "A05",
+    "kind": "adversarial",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "wooden_flute",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "white_gloves",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "Both Old Tomas and a travelling tinker swear the figure they saw was someone with an apron dusted with flour.",
+      "Both the candlemaker and Young Piotr swear the figure they saw was someone with an apron dusted with flour.",
+      "the mill hand told the council the figure was someone with white gloves.",
+      "One villager mentioned, almost as an afterthought, someone with a large grey dog by the mill bridge."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "white_gloves",
+      "large_dog"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "white_gloves"
+    ],
+    "ground_truth": "Lev",
+    "decoy": "Pavel"
+  },
+  {
+    "id": "A06",
+    "kind": "adversarial",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Kael",
+        "role": "schoolteacher",
+        "traits": [
+          "tall_hat",
+          "heavy_limp",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "watchman",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "midwife",
+        "traits": [
+          "red_scarf",
+          "wooden_flute",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "red_scarf",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Several villagers insist they saw someone with an oil lantern heading toward the tannery lane that night.",
+      "Several villagers insist they saw someone with an oil lantern heading toward the granary steps that night.",
+      "the candlemaker saw someone with a red wool scarf near the old fence that night.",
+      "Only the mill hand remarked on it at all: someone with a large grey dog, seen by the mill bridge."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "oil_lantern",
+      "red_scarf",
+      "large_dog"
+    ],
+    "loud_traits": [
+      "oil_lantern",
+      "red_scarf"
+    ],
+    "ground_truth": "Cora",
+    "decoy": "Oda"
+  },
+  {
+    "id": "A07",
+    "kind": "adversarial",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "blacksmith",
+        "traits": [
+          "flour_apron",
+          "oil_lantern",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "brewer",
+        "traits": [
+          "flour_apron",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "watchman",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "the candlemaker is certain: whoever it was, it was someone with an apron dusted with flour. It was said twice before breakfast.",
+      "At the inn, three people separately described someone with an apron dusted with flour crossing the mill bridge.",
+      "the mill hand told the council the figure was someone with an oil lantern.",
+      "Only the mill hand remarked on it at all: someone with a wooden flute, seen by the market square."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "oil_lantern",
+      "wooden_flute"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "oil_lantern"
+    ],
+    "ground_truth": "Cora",
+    "decoy": "Hugo"
+  },
+  {
+    "id": "A08",
+    "kind": "adversarial",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Oda",
+        "role": "baker",
+        "traits": [
+          "oil_lantern",
+          "wooden_flute",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "midwife",
+        "traits": [
+          "red_scarf",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "tall_hat",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "At the inn, three people separately described someone with a red wool scarf crossing the tannery lane.",
+      "the candlemaker is certain: whoever it was, it was someone with a red wool scarf. It was said twice before breakfast.",
+      "Young Piotr saw someone with a wooden flute near the orchard gate that night.",
+      "Only Sister Mellis remarked on it at all: someone with an oil lantern, seen by the mill bridge."
+    ],
+    "clue_traits": [
+      "red_scarf",
+      "red_scarf",
+      "wooden_flute",
+      "oil_lantern"
+    ],
+    "loud_traits": [
+      "red_scarf",
+      "wooden_flute"
+    ],
+    "ground_truth": "Oda",
+    "decoy": "Cora"
+  },
+  {
+    "id": "A09",
+    "kind": "adversarial",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "watchman",
+        "traits": [
+          "red_scarf",
+          "large_dog",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "brewer",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "red_scarf",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "wooden_flute",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "white_gloves",
+          "red_scarf"
+        ]
+      }
+    ],
+    "clues": [
+      "the mill hand is certain: whoever it was, it was someone with an apron dusted with flour. It was said twice before breakfast.",
+      "At the inn, three people separately described someone with an apron dusted with flour crossing the old fence.",
+      "the gatekeeper saw someone with a large grey dog near the market square that night.",
+      "Only the mill hand remarked on it at all: someone with a green raincoat, seen by the chapel yard."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "large_dog",
+      "green_coat"
+    ],
+    "loud_traits": [
+      "flour_apron",
+      "large_dog"
+    ],
+    "ground_truth": "Elsa",
+    "decoy": "Ida"
+  },
+  {
+    "id": "P00",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "large_dog",
+          "white_gloves",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "cotter",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Sister Mellis saw someone with an apron dusted with flour near the old fence that night.",
+      "a travelling tinker saw someone with a tall felt hat near the tannery lane that night.",
+      "Old Tomas told the council the figure was someone with a brass gate key."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "tall_hat",
+      "brass_key"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P01",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "blacksmith",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "schoolteacher",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr told the council the figure was someone with white gloves.",
+      "Sister Mellis saw someone with a tall felt hat near the orchard gate that night.",
+      "the candlemaker told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "tall_hat",
+      "red_scarf"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P02",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "midwife",
+        "traits": [
+          "green_coat",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "miller",
+        "traits": [
+          "tall_hat",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker told the council the figure was someone with a wooden flute.",
+      "Young Piotr told the council the figure was someone with an apron dusted with flour.",
+      "Old Tomas told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "flour_apron",
+      "red_scarf"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P03",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "green_coat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "green_coat",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "schoolteacher",
+        "traits": [
+          "heavy_limp",
+          "wooden_flute",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Sister Mellis told the council the figure was someone with an oil lantern.",
+      "Sister Mellis saw someone with a green raincoat near the mill bridge that night.",
+      "Sister Mellis saw someone with a tall felt hat near the orchard gate that night."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "green_coat",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P04",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Cora",
+        "role": "baker",
+        "traits": [
+          "wooden_flute",
+          "tall_hat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "shepherd",
+        "traits": [
+          "green_coat",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "clerk",
+        "traits": [
+          "red_scarf",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "red_scarf",
+          "wooden_flute"
+        ]
+      }
+    ],
+    "clues": [
+      "the mill hand told the council the figure was someone with a heavy limp.",
+      "Widow Ferne told the council the figure was someone with a green raincoat.",
+      "Sister Mellis told the council the figure was someone with a tall felt hat."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "green_coat",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P05",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "blacksmith",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "baker",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "clerk",
+        "traits": [
+          "white_gloves",
+          "oil_lantern",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "wooden_flute",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr told the council the figure was someone with a heavy limp.",
+      "a travelling tinker told the council the figure was someone with a tall felt hat.",
+      "a travelling tinker saw someone with a red wool scarf near the market square that night."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "tall_hat",
+      "red_scarf"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P06",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Joss",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "miller",
+        "traits": [
+          "green_coat",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "flour_apron",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr told the council the figure was someone with a tall felt hat.",
+      "Young Piotr saw someone with a tall felt hat near the mill bridge that night.",
+      "a travelling tinker saw someone with a wooden flute near the tannery lane that night.",
+      "the mill hand saw someone with an oil lantern near the granary steps that night."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "tall_hat",
+      "wooden_flute",
+      "oil_lantern"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P07",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "watchman",
+        "traits": [
+          "large_dog",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "red_scarf",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "shepherd",
+        "traits": [
+          "flour_apron",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "the candlemaker saw someone with a large grey dog near the granary steps that night.",
+      "Sister Mellis told the council the figure was someone with a large grey dog.",
+      "Widow Ferne saw someone with a red wool scarf near the orchard gate that night.",
+      "Young Piotr saw someone with a heavy limp near the orchard gate that night."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "large_dog",
+      "red_scarf",
+      "heavy_limp"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P08",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Kael",
+        "role": "brewer",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "clerk",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "blacksmith",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "miller",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker saw someone with an apron dusted with flour near the orchard gate that night.",
+      "Widow Ferne told the council the figure was someone with an apron dusted with flour.",
+      "the candlemaker told the council the figure was someone with a red wool scarf.",
+      "the candlemaker saw someone with a tall felt hat near the chapel yard that night."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "red_scarf",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P09",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Greta",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "red_scarf",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "green_coat",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "large_dog",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "cotter",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker saw someone with an oil lantern near the chapel yard that night.",
+      "Sister Mellis told the council the figure was someone with an oil lantern.",
+      "the mill hand told the council the figure was someone with a red wool scarf.",
+      "Young Piotr told the council the figure was someone with a tall felt hat."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "oil_lantern",
+      "red_scarf",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P10",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Joss",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "white_gloves",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "clerk",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "midwife",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "baker",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "Widow Ferne saw someone with an apron dusted with flour near the mill bridge that night.",
+      "Sister Mellis saw someone with an apron dusted with flour near the tannery lane that night.",
+      "the mill hand told the council the figure was someone with a red wool scarf.",
+      "the mill hand saw someone with an oil lantern near the granary steps that night."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "red_scarf",
+      "oil_lantern"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P11",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "cotter",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "red_scarf",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "the gatekeeper saw someone with an apron dusted with flour near the orchard gate that night.",
+      "Widow Ferne saw someone with an apron dusted with flour near the market square that night.",
+      "a travelling tinker told the council the figure was someone with white gloves.",
+      "Old Tomas told the council the figure was someone with a large grey dog."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "white_gloves",
+      "large_dog"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P12",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Mira",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "oil_lantern",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "brewer",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "tall_hat"
+        ]
+      }
+    ],
+    "clues": [
+      "Widow Ferne saw someone with an oil lantern near the tannery lane that night.",
+      "Old Tomas told the council the figure was someone with an oil lantern.",
+      "the gatekeeper told the council the figure was someone with a red wool scarf.",
+      "the candlemaker told the council the figure was someone with a large grey dog."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "oil_lantern",
+      "red_scarf",
+      "large_dog"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P13",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Nils",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "midwife",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "large_dog",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "schoolteacher",
+        "traits": [
+          "brass_key",
+          "heavy_limp",
+          "large_dog"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr told the council the figure was someone with an apron dusted with flour.",
+      "the mill hand told the council the figure was someone with an apron dusted with flour.",
+      "Old Tomas told the council the figure was someone with an oil lantern.",
+      "Widow Ferne told the council the figure was someone with a wooden flute."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "oil_lantern",
+      "wooden_flute"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P14",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Nils",
+        "role": "midwife",
+        "traits": [
+          "flour_apron",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "oil_lantern",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Greta",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "baker",
+        "traits": [
+          "white_gloves",
+          "wooden_flute",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "clerk",
+        "traits": [
+          "large_dog",
+          "wooden_flute",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "flour_apron",
+          "tall_hat",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "the candlemaker told the council the figure was someone with a red wool scarf.",
+      "the mill hand told the council the figure was someone with a red wool scarf.",
+      "a travelling tinker told the council the figure was someone with a wooden flute.",
+      "the candlemaker saw someone with an oil lantern near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "red_scarf",
+      "red_scarf",
+      "wooden_flute",
+      "oil_lantern"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P15",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Fen",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "heavy_limp",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "brewer",
+        "traits": [
+          "wooden_flute",
+          "red_scarf",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker told the council the figure was someone with an apron dusted with flour.",
+      "the candlemaker saw someone with an apron dusted with flour near the tannery lane that night.",
+      "the mill hand told the council the figure was someone with a large grey dog.",
+      "the mill hand saw someone with a green raincoat near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "flour_apron",
+      "large_dog",
+      "green_coat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P16",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Dain",
+        "role": "shepherd",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "baker",
+        "traits": [
+          "tall_hat",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "cotter",
+        "traits": [
+          "tall_hat",
+          "large_dog",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "green_coat",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "schoolteacher",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "red_scarf"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker saw someone with a large grey dog near the orchard gate that night.",
+      "a travelling tinker saw someone with white gloves near the market square that night.",
+      "the mill hand told the council the figure was someone with a heavy limp."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "white_gloves",
+      "heavy_limp"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P17",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "cotter",
+        "traits": [
+          "brass_key",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "miller",
+        "traits": [
+          "white_gloves",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "shepherd",
+        "traits": [
+          "tall_hat",
+          "oil_lantern",
+          "wooden_flute"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr saw someone with white gloves near the mill bridge that night.",
+      "Widow Ferne saw someone with a tall felt hat near the old fence that night.",
+      "Widow Ferne told the council the figure was someone with an oil lantern."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "tall_hat",
+      "oil_lantern"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P18",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "watchman",
+        "traits": [
+          "heavy_limp",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "wooden_flute",
+          "flour_apron",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "schoolteacher",
+        "traits": [
+          "brass_key",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "clerk",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "the mill hand saw someone with an apron dusted with flour near the mill bridge that night.",
+      "Old Tomas saw someone with a green raincoat near the granary steps that night.",
+      "the gatekeeper told the council the figure was someone with a red wool scarf."
+    ],
+    "clue_traits": [
+      "flour_apron",
+      "green_coat",
+      "red_scarf"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P19",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Amara",
+        "role": "blacksmith",
+        "traits": [
+          "green_coat",
+          "white_gloves",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "midwife",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "large_dog",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "Sister Mellis saw someone with a tall felt hat near the old fence that night.",
+      "the gatekeeper saw someone with a red wool scarf near the tannery lane that night.",
+      "Sister Mellis told the council the figure was someone with a heavy limp."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "red_scarf",
+      "heavy_limp"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P20",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "schoolteacher",
+        "traits": [
+          "green_coat",
+          "oil_lantern",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "brewer",
+        "traits": [
+          "red_scarf",
+          "heavy_limp",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "blacksmith",
+        "traits": [
+          "wooden_flute",
+          "large_dog",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "Widow Ferne told the council the figure was someone with a wooden flute.",
+      "Old Tomas told the council the figure was someone with a tall felt hat.",
+      "Young Piotr told the council the figure was someone with a large grey dog."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "tall_hat",
+      "large_dog"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P21",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Fen",
+        "role": "midwife",
+        "traits": [
+          "oil_lantern",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "green_coat",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "watchman",
+        "traits": [
+          "heavy_limp",
+          "large_dog",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "clerk",
+        "traits": [
+          "large_dog",
+          "green_coat",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker told the council the figure was someone with a wooden flute.",
+      "the candlemaker told the council the figure was someone with a heavy limp.",
+      "Sister Mellis saw someone with white gloves near the old fence that night."
+    ],
+    "clue_traits": [
+      "wooden_flute",
+      "heavy_limp",
+      "white_gloves"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P22",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Pavel",
+        "role": "schoolteacher",
+        "traits": [
+          "oil_lantern",
+          "white_gloves",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "baker",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "oil_lantern",
+          "tall_hat",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Kael",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "blacksmith",
+        "traits": [
+          "oil_lantern",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Nils",
+        "role": "miller",
+        "traits": [
+          "tall_hat",
+          "red_scarf",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "the candlemaker saw someone with an oil lantern near the chapel yard that night.",
+      "Sister Mellis told the council the figure was someone with a red wool scarf.",
+      "Sister Mellis told the council the figure was someone with an apron dusted with flour."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "red_scarf",
+      "flour_apron"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P23",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Bram",
+        "role": "schoolteacher",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "baker",
+        "traits": [
+          "white_gloves",
+          "green_coat",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "brewer",
+        "traits": [
+          "tall_hat",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "blacksmith",
+        "traits": [
+          "heavy_limp",
+          "red_scarf",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Joss",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "large_dog",
+          "brass_key"
+        ]
+      }
+    ],
+    "clues": [
+      "Sister Mellis saw someone with a red wool scarf near the old fence that night.",
+      "the gatekeeper told the council the figure was someone with an apron dusted with flour.",
+      "Sister Mellis told the council the figure was someone with white gloves."
+    ],
+    "clue_traits": [
+      "red_scarf",
+      "flour_apron",
+      "white_gloves"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P24",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Dain",
+        "role": "cotter",
+        "traits": [
+          "flour_apron",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "red_scarf",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "blacksmith",
+        "traits": [
+          "white_gloves",
+          "brass_key",
+          "oil_lantern"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "watchman",
+        "traits": [
+          "tall_hat",
+          "brass_key",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "miller",
+        "traits": [
+          "oil_lantern",
+          "flour_apron",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "green_coat"
+        ]
+      }
+    ],
+    "clues": [
+      "the gatekeeper told the council the figure was someone with white gloves.",
+      "Sister Mellis told the council the figure was someone with a wooden flute.",
+      "a travelling tinker told the council the figure was someone with a tall felt hat."
+    ],
+    "clue_traits": [
+      "white_gloves",
+      "wooden_flute",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P25",
+    "kind": "placebo",
+    "title": "The Disturbed Shrine",
+    "story": "Someone broke the votive lamps at the shrine and took the offering box. It happened in the hour before the watch bell.",
+    "suspects": [
+      {
+        "name": "Bram",
+        "role": "brewer",
+        "traits": [
+          "red_scarf",
+          "brass_key",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "heavy_limp",
+          "tall_hat",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "schoolteacher",
+        "traits": [
+          "flour_apron",
+          "wooden_flute",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "midwife",
+        "traits": [
+          "wooden_flute",
+          "white_gloves",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "baker",
+        "traits": [
+          "large_dog",
+          "white_gloves",
+          "flour_apron"
+        ]
+      }
+    ],
+    "clues": [
+      "the candlemaker told the council the figure was someone with an oil lantern.",
+      "Old Tomas told the council the figure was someone with a heavy limp.",
+      "Young Piotr saw someone with white gloves near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "oil_lantern",
+      "heavy_limp",
+      "white_gloves"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P26",
+    "kind": "placebo",
+    "title": "The Poisoned Well",
+    "story": "Dead fish floated in the lower well by morning; someone had dumped tannery slops there overnight.",
+    "suspects": [
+      {
+        "name": "Kael",
+        "role": "schoolteacher",
+        "traits": [
+          "tall_hat",
+          "heavy_limp",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "miller",
+        "traits": [
+          "large_dog",
+          "brass_key",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "cotter",
+        "traits": [
+          "large_dog",
+          "oil_lantern",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Amara",
+        "role": "watchman",
+        "traits": [
+          "green_coat",
+          "flour_apron",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "midwife",
+        "traits": [
+          "red_scarf",
+          "wooden_flute",
+          "heavy_limp"
+        ]
+      },
+      {
+        "name": "Oda",
+        "role": "baker",
+        "traits": [
+          "flour_apron",
+          "red_scarf",
+          "oil_lantern"
+        ]
+      }
+    ],
+    "clues": [
+      "Young Piotr told the council the figure was someone with a tall felt hat.",
+      "Widow Ferne told the council the figure was someone with a brass gate key.",
+      "Old Tomas told the council the figure was someone with an apron dusted with flour."
+    ],
+    "clue_traits": [
+      "tall_hat",
+      "brass_key",
+      "flour_apron"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P27",
+    "kind": "placebo",
+    "title": "The Granary Theft",
+    "story": "Two sacks of winter grain vanished from the granary; the lock was not forced.",
+    "suspects": [
+      {
+        "name": "Ida",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "clerk",
+        "traits": [
+          "oil_lantern",
+          "brass_key",
+          "flour_apron"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "blacksmith",
+        "traits": [
+          "flour_apron",
+          "oil_lantern",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Bram",
+        "role": "midwife",
+        "traits": [
+          "white_gloves",
+          "large_dog",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Fen",
+        "role": "brewer",
+        "traits": [
+          "flour_apron",
+          "tall_hat",
+          "white_gloves"
+        ]
+      },
+      {
+        "name": "Dain",
+        "role": "watchman",
+        "traits": [
+          "green_coat",
+          "tall_hat",
+          "white_gloves"
+        ]
+      }
+    ],
+    "clues": [
+      "a travelling tinker saw someone with a heavy limp near the orchard gate that night.",
+      "the candlemaker saw someone with an oil lantern near the mill bridge that night.",
+      "Young Piotr saw someone with a tall felt hat near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "heavy_limp",
+      "oil_lantern",
+      "tall_hat"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P28",
+    "kind": "placebo",
+    "title": "The Burned Hayrick",
+    "story": "The east hayrick went up in flames just after midnight, and the night's rain never came.",
+    "suspects": [
+      {
+        "name": "Oda",
+        "role": "baker",
+        "traits": [
+          "oil_lantern",
+          "wooden_flute",
+          "red_scarf"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "midwife",
+        "traits": [
+          "red_scarf",
+          "wooden_flute",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "cotter",
+        "traits": [
+          "green_coat",
+          "wooden_flute",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "miller",
+        "traits": [
+          "red_scarf",
+          "flour_apron",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Mira",
+        "role": "watchman",
+        "traits": [
+          "brass_key",
+          "tall_hat",
+          "wooden_flute"
+        ]
+      },
+      {
+        "name": "Elsa",
+        "role": "shepherd",
+        "traits": [
+          "brass_key",
+          "large_dog",
+          "heavy_limp"
+        ]
+      }
+    ],
+    "clues": [
+      "Widow Ferne told the council the figure was someone with a large grey dog.",
+      "Old Tomas saw someone with an apron dusted with flour near the mill bridge that night.",
+      "the candlemaker saw someone with a heavy limp near the old fence that night."
+    ],
+    "clue_traits": [
+      "large_dog",
+      "flour_apron",
+      "heavy_limp"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  },
+  {
+    "id": "P29",
+    "kind": "placebo",
+    "title": "The Cut Bell Rope",
+    "story": "The chapel bell rope was cut through and the bell could not ring the dawn watch.",
+    "suspects": [
+      {
+        "name": "Elsa",
+        "role": "midwife",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Hugo",
+        "role": "watchman",
+        "traits": [
+          "red_scarf",
+          "large_dog",
+          "brass_key"
+        ]
+      },
+      {
+        "name": "Ida",
+        "role": "brewer",
+        "traits": [
+          "large_dog",
+          "flour_apron",
+          "tall_hat"
+        ]
+      },
+      {
+        "name": "Lev",
+        "role": "shepherd",
+        "traits": [
+          "white_gloves",
+          "red_scarf",
+          "green_coat"
+        ]
+      },
+      {
+        "name": "Cora",
+        "role": "miller",
+        "traits": [
+          "wooden_flute",
+          "heavy_limp",
+          "large_dog"
+        ]
+      },
+      {
+        "name": "Pavel",
+        "role": "clerk",
+        "traits": [
+          "heavy_limp",
+          "white_gloves",
+          "red_scarf"
+        ]
+      }
+    ],
+    "clues": [
+      "the mill hand told the council the figure was someone with a brass gate key.",
+      "Young Piotr told the council the figure was someone with white gloves.",
+      "Young Piotr saw someone with a red wool scarf near the tannery lane that night."
+    ],
+    "clue_traits": [
+      "brass_key",
+      "white_gloves",
+      "red_scarf"
+    ],
+    "loud_traits": [],
+    "ground_truth": null,
+    "decoy": null
+  }
+]

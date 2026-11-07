@@ -1,0 +1,15 @@
+{
+  "family_a_model": "FILL_IN_FROM_MODELS_LIST",
+  "family_b_model": "FILL_IN_FROM_MODELS_LIST",
+  "panel_size": 5,
+  "seeds": 3,
+  "conditions": ["C1", "C2", "C3"],
+  "arms": {
+    "A": "family_a",
+    "B": "family_b",
+    "M": "mixed"
+  },
+  "temperature": 1.0,
+  "max_concurrency": 16,
+  "include_placebo": true
+}

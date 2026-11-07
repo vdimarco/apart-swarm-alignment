@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+.env
+runs/*.jsonl
+runs/*_metrics.json
+scratch/
