@@ -55,10 +55,10 @@ Model-family assignment for arms A/B — decision lands once `python -m src.clie
 ## Decomposition
 
 - [x] Task 1 — Ideate → Confirm focus (combined direction approved, assets verified) — **done 2026-11-07**
-- [ ] Task 2 — Discover → verify Adaption models, towns-log dump location, repo hygiene
-- [ ] Task 3 — Spec + pre-registration doc; harness `src/{scenarios,client,harness}.py`
-- [ ] Task 4 — Smoke: scenario validation + 1-panel C1 live call
-- [ ] Task 5 — Full sweep overnight; resume-safe JSONL
+- [x] Task 2 — Discover → verify Adaption models, towns-log dump location, repo hygiene — **done 2026-11-07** (catalog = 7 platform models; arms = qwen3.5-397b/glm-5.2; towns-log location still open for Task 7)
+- [x] Task 3 — Spec + pre-registration doc; harness `src/{scenarios,client,harness}.py` — **done 2026-11-07**
+- [x] Task 4 — Smoke: scenario validation + 1-panel C2 live call — **done 2026-11-07**
+- [~] Task 5 — Full sweep overnight (label=main, ~24.3k calls); resume-safe JSONL — **running**
 - [ ] Task 6 — `analyze.py` metrics: N_eff, bands, prior agreement, figs
 - [ ] Task 7 — Report (template), appendix, submission, repo push
 
