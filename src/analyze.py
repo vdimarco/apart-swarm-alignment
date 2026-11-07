@@ -142,17 +142,18 @@ def analyze(label: str, bootstrap_reps: int = 2000):
         for (c, s, k), v in sorted(band.items())
     }
 
-    # ---- H3: same- vs cross-family initial correlations in arm M (3xA + 2xB)
+    # ---- H3/H5: same- vs cross-family initial correlations in mixed arms
+    # (any arm whose panel includes more than one distinct model)
     same_rhos, cross_rhos = [], []
     for (arm, cond, seed, sid), stages in pan.items():
-        if arm != "M":
-            continue
         m_suspects = [s["name"] for s in scenarios[sid]["suspects"]]
         agents = {
             i: (r["model"], v)
             for i, r in stages.get("initial", {}).items()
             if (v := vec(r, m_suspects)) is not None
         }
+        if len({m for m, _ in agents.values()}) < 2:
+            continue
         for i, j in combinations(sorted(agents), 2):
             c = pearson(agents[i][1], agents[j][1])
             if c is None:
