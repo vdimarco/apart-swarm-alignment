@@ -35,9 +35,9 @@ def pearson(xs: list[float], ys: list[float]) -> float | None:
     return cov / math.sqrt(vx * vy)
 
 
-def load(label: str):
+def load(label: str, scenarios_file: str = "scenarios.json"):
     recs = [json.loads(l) for l in (RUNS / f"{label}.jsonl").read_text().splitlines()]
-    scenarios = {s["id"]: s for s in json.loads((RUNS / "scenarios.json").read_text())}
+    scenarios = {s["id"]: s for s in json.loads((RUNS / scenarios_file).read_text())}
     return recs, scenarios
 
 
@@ -75,8 +75,8 @@ def brier(probs: list[float], truth_idx: int) -> float:
     return sum((p - (1.0 if i == truth_idx else 0.0)) ** 2 for i, p in enumerate(probs))
 
 
-def analyze(label: str, bootstrap_reps: int = 2000):
-    recs, scenarios = load(label)
+def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scenarios.json"):
+    recs, scenarios = load(label, scenarios_file)
     pan = panels(recs)
 
     metrics: dict = {"label": label, "panels": len(pan)}
@@ -200,8 +200,10 @@ def analyze(label: str, bootstrap_reps: int = 2000):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--label", default="main")
+    ap.add_argument("--scenarios", default="scenarios.json",
+                    help="scenario bank file under runs/ (e.g. scenarios_hard.json)")
     args = ap.parse_args()
-    analyze(args.label)
+    analyze(args.label, scenarios_file=args.scenarios)
 
 
 if __name__ == "__main__":
