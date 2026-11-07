@@ -1,0 +1,21 @@
+{
+  "family_a_model": "qwen3.5-397b",
+  "family_b_model": "glm-5.2",
+  "panel_size": 6,
+  "seeds": 2,
+  "conditions": ["C2"],
+  "arms": {
+    "M6DA": [
+      "qwen3.5-397b",
+      "glm-5.2",
+      "qwen3.8-27b",
+      "deepseek-v4-flash",
+      "gemma-4-31b-it",
+      "gemma-4-26b-a4b-it"
+    ]
+  },
+  "devils_advocate_arms": ["M6DA"],
+  "temperature": 1.0,
+  "max_concurrency": 8,
+  "include_placebo": false
+}

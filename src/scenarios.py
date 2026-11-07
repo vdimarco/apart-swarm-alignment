@@ -74,6 +74,58 @@ QUIET_TEMPLATES = [
 ]
 
 
+NEG_QUIET_TEMPLATES = [
+    "Only {w1} remarked on it at all: the figure was definitely not the sort with {trait}.",
+    "In passing, {w1} said, almost to themselves, that whoever it was did not have {trait}.",
+    "{w1} mentioned once, quietly, that the person they glimpsed could not be anyone with {trait}.",
+]
+
+
+def _gen_hard_one(seed: int, idx: int) -> Scenario:
+    """8 suspects; decoy shares the 2 loud traits; ONLY a negative sighting rules the decoy out."""
+    rng = random.Random(seed * 7331 + idx * 41113)
+    title, story = TITLES[idx % len(TITLES)]
+    for _attempt in range(600):
+        names = rng.sample(NAMES, 8)
+        roles = rng.sample(ROLES, 8)
+        suspects: list[Suspect] = []
+        seen: set[frozenset[str]] = set()
+        for n, r in zip(names, roles):
+            traits = rng.sample(list(TRAITS), 3)
+            for _ in range(80):
+                if frozenset(traits) not in seen:
+                    break
+                traits = rng.sample(list(TRAITS), 3)
+            seen.add(frozenset(traits))
+            suspects.append(Suspect(name=n, role=r, traits=traits))
+        culprit = rng.choice(suspects)
+        decoys = [s for s in suspects if s is not culprit and len(set(s.traits) & set(culprit.traits)) >= 2]
+        rng.shuffle(decoys)
+        for decoy in decoys:
+            shared = sorted(set(decoy.traits) & set(culprit.traits))
+            neg_opts = [t for t in decoy.traits if t not in culprit.traits]
+            if len(shared) < 2 or not neg_opts:
+                continue
+            loud = shared[:2]
+            neg = neg_opts[0]
+            clue_traits = [loud[0], loud[0], loud[1], "-" + neg]
+            if _matches(clue_traits, suspects) != [culprit.name]:
+                continue
+            if decoy.name not in _matches(loud, suspects):
+                continue
+            clues = (
+                [_clue_text(loud[0], "loud", rng), _clue_text(loud[0], "loud", rng)]
+                + [_clue_text(loud[1], "mid", rng)]
+                + [rng.choice(NEG_QUIET_TEMPLATES).format(trait=TRAITS[neg], w1=rng.choice(WITNESSES))]
+            )
+            return Scenario(
+                id=f"AH{idx:02d}", kind="adversarial_hard", title=title, story=story,
+                suspects=suspects, clues=clues, clue_traits=clue_traits,
+                loud_traits=loud, ground_truth=culprit.name, decoy=decoy.name,
+            )
+    raise RuntimeError(f"could not generate hard adversarial idx={idx}")
+
+
 @dataclass
 class Suspect:
     name: str
@@ -96,8 +148,13 @@ class Scenario:
 
 
 def _matches(traits_needed: list[str], suspects: list[Suspect]) -> list[str]:
-    """Names of suspects possessing every trait in traits_needed."""
-    return [s.name for s in suspects if all(t in s.traits for t in traits_needed)]
+    """Names of suspects possessing every positive trait and none of the "-trait" negatives."""
+    pos = [t for t in traits_needed if not t.startswith("-")]
+    neg = [t[1:] for t in traits_needed if t.startswith("-")]
+    return [
+        s.name for s in suspects
+        if all(t in s.traits for t in pos) and not any(n in s.traits for n in neg)
+    ]
 
 
 def _draw_suspects(rng: random.Random) -> list[Suspect]:
@@ -212,7 +269,7 @@ def render_text(s: Scenario) -> str:
         "",
         s.story,
         "",
-        "The council has named six suspects.",
+        f"The council has named {len(s.suspects)} suspects.",
         "",
         "SUSPECTS",
         *[_render_suspect_line(x) for x in s.suspects],
@@ -231,7 +288,7 @@ def validate(scenarios: list[Scenario]) -> list[str]:
         m = _matches(s.clue_traits, s.suspects)
         if m != [s.ground_truth]:
             errs.append(f"{s.id}: matches={m} truth={s.ground_truth}")
-        if s.kind == "adversarial":
+        if s.kind.startswith("adversarial"):
             loud_matches = _matches(s.loud_traits, s.suspects)
             if s.decoy not in loud_matches or len(loud_matches) < 2:
                 errs.append(f"{s.id}: loud matches={loud_matches} decoy={s.decoy}")
@@ -248,6 +305,14 @@ def generate(seed: int = 20261107, n_consistent: int = 20, n_adversarial: int = 
     return scenarios
 
 
+def generate_hard(seed: int = 20261107, n: int = 12) -> list[Scenario]:
+    scenarios = [_gen_hard_one(seed, i) for i in range(n)]
+    errs = validate(scenarios)
+    if errs:
+        raise RuntimeError("hard scenario validation failed:\n" + "\n".join(errs))
+    return scenarios
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true", help="generate, validate, print summary + one sample")
@@ -260,15 +325,22 @@ def main() -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps([asdict(s) for s in scenarios], indent=2))
 
+    hard = generate_hard(seed=args.seed)
+    hard_out = Path("runs/scenarios_hard.json")
+    hard_out.write_text(json.dumps([asdict(s) for s in hard], indent=2))
+
     from collections import Counter
     kinds = Counter(s.kind for s in scenarios)
     print(f"generated {len(scenarios)} scenarios -> {out} ({dict(kinds)})")
+    print(f"generated {len(hard)} hard adversarial scenarios -> {hard_out} (8 suspects, negative-clue rule-out)")
     if args.check:
         ad = [s for s in scenarios if s.kind == "adversarial"]
         loud_sizes = [len(_matches(s.loud_traits, s.suspects)) for s in ad]
         print(f"adversarial: truth unique in all {len(ad)}; loud-subset match counts {sorted(loud_sizes)}")
-        sample = next(s for s in scenarios if s.kind == "adversarial")
-        print("\n----- sample adversarial scenario -----\n")
+        hard_loud = [len(_matches(s.loud_traits, s.suspects)) for s in hard]
+        print(f"hard adversarial: truth unique in all {len(hard)}; loud-subset match counts {sorted(hard_loud)}")
+        sample = next(s for s in hard)
+        print("\n----- sample HARD adversarial scenario -----\n")
         print(render_text(sample))
         print(f"\n(ground truth: {sample.ground_truth}, decoy: {sample.decoy})")
 

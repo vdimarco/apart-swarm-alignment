@@ -36,6 +36,13 @@ SYSTEM_DISCUSS = (
     "Do not reveal what model or system you are. Do not address the user; write as a council statement."
 )
 
+DA_SYSTEM = (
+    "You are one of six councilors judging a village case, and you are the council's DESIGNATED "
+    "DEVIL'S ADVOCATE. One rule overrides everything: whatever direction the council leans, you argue "
+    "the strongest possible case AGAINST the leading suspect and FOR the second-most-plausible suspect — "
+    "even if you privately agree with the majority. Write clearly and briefly."
+)
+
 C1_FRAMING = ""
 C2_FRAMING = "Your judgment may change freely as the council deliberates."
 C3_FRAMING = (
@@ -199,9 +206,11 @@ async def run_panel(
     if cond == "C1":
         return n_calls
 
-    # stage: statements (concurrent)
+    # stage: statements (concurrent); agent 0 may be the designated devil's advocate
+    da = arm in (cfg.get("devils_advocate_arms") or [])
+    stmt_systems = [(DA_SYSTEM if (da and i == 0) else SYSTEM_DISCUSS) for i in range(panel_size)]
     statements = await asyncio.gather(*[
-        stage_call("statement", i, SYSTEM_DISCUSS, statement_prompt(scenario, framing), 3000,
+        stage_call("statement", i, stmt_systems[i], statement_prompt(scenario, framing), 3000,
                    expect_probs=False)
         for i in range(panel_size)
     ])
@@ -209,7 +218,7 @@ async def run_panel(
 
     # stage: replies (each agent sees the others' statements, anonymized)
     replies = await asyncio.gather(*[
-        stage_call("reply", i, SYSTEM_DISCUSS,
+        stage_call("reply", i, stmt_systems[i],
                    reply_prompt(scenario, [t for j, t in enumerate(texts) if j != i], texts[i], framing),
                    3000, expect_probs=False)
         for i in range(panel_size)
