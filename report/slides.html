@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Why AI Councils Collapse — plain-English slides</title>
+<title>Why AI councils collapse — slides</title>
 <style>
-:root{--bg:#0e1116;--ink:#ece9e2;--mut:#97a1b4;--acc:#e0a943;--card:#171c24}
+:root{--bg:#0e1116;--ink:#e8e6e1;--mut:#97a1b4;--acc:#e0a943}
 *{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:19px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
-.slide{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;opacity:0;transition:opacity .35s}
+.slide{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;padding:5vh 6vw;opacity:0;transition:opacity .3s}
 .slide.on{display:flex;opacity:1}
-.kick{color:var(--acc);text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;margin-bottom:.4em}
-h2{font-size:2.4rem;line-height:1.18;margin:.1em 0 .6em;max-width:22ch}
-.body{max-width:46rem}
-.body p{margin:.5em 0;color:#d6d3cb}
-.big{font-size:1.35rem;color:#fff!important}
-.dim{color:var(--mut)!important;font-size:.95rem}
-b{color:#fff}
-.pagenum{position:absolute;bottom:26px;right:34px;color:var(--mut);font-size:.85rem;font-variant-numeric:tabular-nums}
-#dots{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.kick{color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;margin-bottom:.3em}
+h2{font-size:2rem;line-height:1.2;margin:.1em 0 .5em;max-width:24ch;font-weight:650}
+.cols{display:flex;gap:3vw;align-items:flex-start;max-width:1200px}
+.bodytext{flex:1;min-width:280px;max-width:34rem}
+.bodytext p{margin:.55em 0;color:#d6d3cb}
+.dim{color:var(--mut)}
+.figbox{flex:1.15;min-width:300px;background:#141922;border:1px solid #252d3c;border-radius:14px;padding:14px}
+.fig{width:100%;height:auto;display:block}
+.pagenum{position:absolute;bottom:24px;right:34px;color:var(--mut);font-size:.85rem;font-variant-numeric:tabular-nums}
+#dots{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
 .dot{width:8px;height:8px;border-radius:50%;background:#333c4c;cursor:pointer}
 .dot.on{background:var(--acc)}
-.hint{position:fixed;bottom:22px;left:26px;color:var(--mut);font-size:.8rem}
-@media(max-width:600px){h2{font-size:1.7rem}.big{font-size:1.12rem}}
+.hint{position:fixed;bottom:20px;left:26px;color:var(--mut);font-size:.8rem}
+code{background:#202632;padding:1px 6px;border-radius:6px;font-size:.85em}
+a{color:var(--acc)}
+@media(max-width:820px){.cols{flex-direction:column}h2{font-size:1.5rem}}
 </style></head><body>
 
 <section class="slide on" data-i="0">
-  <div class="kick">plain-English edition</div>
-  <h2>Why AI Councils Collapse</h2>
-  <div class="body"><p class='big'>We ran one weekend of experiments to answer a simple question: <b>if you put a team of AIs in charge of a decision, do you get many minds — or just one, many times?</b></p><p class='dim'>Apart Research Swarm Alignment Hackathon 2026 · Vaughn Dimarco</p></div>
+  <div class="kick">background</div>
+  <h2>Why AI councils collapse</h2>
+  <div class="cols"><div class="bodytext"><p>One weekend, one question: if a team of AIs makes a decision, how many minds are actually deciding?</p>
+     <p class="dim">Apart Research Swarm Alignment Hackathon 2026 · Vaughn Dimarco · tracks 2 + 4</p></div><div class="figbox"><svg viewBox="0 0 520 260" class="fig"><path d="M 60 30 C 160 30, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 74 C 160 74, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 118 C 160 118, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 162 C 160 162, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 206 C 160 206, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 250 C 160 250, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><circle cx="40" cy="30" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="74" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="118" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="162" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="206" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="250" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="290" cy="118" r="34" fill="#e0a943"/><text x="290" y="126" font-size="17" font-weight="700" fill="#111" text-anchor="middle">1.02</text><text x="40" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">6 councilors</text><text x="290" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">independent minds after two rounds of talk</text></svg></div></div>
   <div class="pagenum">1 / 12</div>
 </section>
 <section class="slide" data-i="1">
-  <div class="kick">the hope</div>
-  <h2>Lots of AIs should be safer than one</h2>
-  <div class="body"><p>The bet in AI safety today: don't trust one model. Have <b>many agents check each other</b> — a council, a swarm, a town.</p><p class='big'>More voters should mean better judgment... <b>if each vote is actually independent.</b></p></div>
+  <div class="kick">background</div>
+  <h2>The common bet: many agents should be safer than one</h2>
+  <div class="cols"><div class="bodytext"><p>Current multi-agent safety leans on redundancy: several models vote, watch each other, catch the bad actor. That works only if the votes are independent copies of judgment, not the same judgment.</p></div><div class="figbox"><svg viewBox="0 0 520 260" class="fig"><path d="M 60 30 C 160 30, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 74 C 160 74, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 118 C 160 118, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 162 C 160 162, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 206 C 160 206, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 250 C 160 250, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><circle cx="40" cy="30" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="74" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="118" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="162" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="206" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="250" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="290" cy="118" r="34" fill="#e0a943"/><text x="290" y="126" font-size="17" font-weight="700" fill="#111" text-anchor="middle">1.02</text><text x="40" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">6 councilors</text><text x="290" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">independent minds after two rounds of talk</text></svg></div></div>
   <div class="pagenum">2 / 12</div>
 </section>
 <section class="slide" data-i="2">
-  <div class="kick">the observation</div>
-  <h2>First clue: real AI towns hang their own</h2>
-  <div class="body"><p>In ~1,800 days of AI social-deduction games, eight players think like <b>fewer than two people</b> by day two — and like <b>one</b> by day five.</p><p>When the town is <b>75–90% sure</b> who the villain is, it's wrong <b>62%</b> of the time — and a wrongly-confident lynch drops the good team's win rate from 61% to 36%.</p><p class='dim'>The really dangerous consensus is the medium-confident one.</p></div>
+  <div class="kick">observation</div>
+  <h2>Wild evidence: towns hang their own</h2>
+  <div class="cols"><div class="bodytext"><p>In about 1,800 days of AI social-deduction games, eight players' beliefs line up like fewer than two people by day two, like one by day five.</p>
+     <p>When the town is 75-90% sure of its target, it is usually wrong (62%). Worse: evil players suggest bad targets 4× more often, but 70% of the wrong-execution nominations come from good players copying each other. The crowd does the damage itself.</p></div><div class="figbox"><svg viewBox="0 0 560 160" class="fig"><text x="150" y="38" font-size="13" fill="#e8e6e1" text-anchor="end">under 75% agree</text><rect x="160" y="20" width="221" height="24" rx="4" fill="#e07b6f"/><text x="391" y="37" font-size="13" fill="#97a1b4">65% wrong</text><text x="150" y="86" font-size="13" fill="#e8e6e1" text-anchor="end">75-90% agree</text><rect x="160" y="68" width="211" height="24" rx="4" fill="#e07b6f"/><text x="381" y="85" font-size="13" fill="#97a1b4">62% wrong</text><text x="150" y="134" font-size="13" fill="#e8e6e1" text-anchor="end">90%+ agree</text><rect x="160" y="116" width="3" height="24" rx="4" fill="#8fce9b"/><text x="173" y="133" font-size="13" fill="#97a1b4">1% wrong</text><text x="160" y="155" font-size="12" fill="#97a1b4">how often an executed "sure thing" was innocent (towns dataset)</text></svg></div></div>
   <div class="pagenum">3 / 12</div>
 </section>
 <section class="slide" data-i="3">
-  <div class="kick">the test</div>
-  <h2>So we built a lab version</h2>
-  <div class="body"><p>We gave councils of AI models <b>mystery riddles</b>: 6 suspects, witness clues, exactly one provably right answer — we know the truth, so no hand-waving.</p><p><b>6 councilors, each a different AI family</b> (Qwen, GLM, DeepSeek, Gemma…), ~6,400 logged calls, every hypothesis written down before the first run.</p></div>
+  <div class="kick">method</div>
+  <h2>The lab version</h2>
+  <div class="cols"><div class="bodytext"><p>We wrote village mystery riddles: six suspects, witness clues, exactly one provable culprit, checked by a script. Six councilors, each a different model family, same evidence, strict probability answers. Every call logged; hypotheses committed in git before the first call.</p></div><div class="figbox"><svg viewBox="0 0 610 205" class="fig"><rect x="30" y="20" width="82" height="34" rx="8" fill="#6f9fe8" opacity="0.9"/><text x="71" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">Qwen 3.5</text><path d="M 71 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="122" y="20" width="82" height="34" rx="8" fill="#e0a943" opacity="0.9"/><text x="163" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">GLM 5.2</text><path d="M 163 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="214" y="20" width="82" height="34" rx="8" fill="#6f9fe8" opacity="0.9"/><text x="255" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">Qwen 3.8</text><path d="M 255 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="306" y="20" width="82" height="34" rx="8" fill="#b58ac9" opacity="0.9"/><text x="347" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">DeepSeek</text><path d="M 347 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="398" y="20" width="82" height="34" rx="8" fill="#8fce9b" opacity="0.9"/><text x="439" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">Gemma 31B</text><path d="M 439 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="490" y="20" width="82" height="34" rx="8" fill="#8fce9b" opacity="0.9"/><text x="531" y="41" font-size="12" fill="#111" text-anchor="middle" font-weight="600">Gemma 26B</text><path d="M 531 54 L 290 118" stroke="#97a1b4" stroke-width="1.2" opacity="0.55"/><rect x="235" y="105" width="110" height="52" rx="10" fill="#e8e6e1"/><text x="290" y="127" font-size="12" fill="#111" text-anchor="middle" font-weight="650">village riddle</text><text x="290" y="145" font-size="11" fill="#111" text-anchor="middle">one true culprit</text><text x="290" y="185" font-size="13" fill="#97a1b4" text-anchor="middle">→ strict JSON probabilities · ~6,400 logged calls</text></svg></div></div>
   <div class="pagenum">4 / 12</div>
 </section>
 <section class="slide" data-i="4">
-  <div class="kick">finding one</div>
-  <h2>Before they talk, they already agree. After, they're identical</h2>
-  <div class="body"><p class='big'>Before any discussion, the six different AIs' guesses are <b>88% correlated</b>. After two rounds of talking: <b>~99%</b>.</p><p class='big'>Six thinkers → <b>1.02 independent thinkers</b> (of 6). That's the whole council.</p></div>
+  <div class="kick">result 1</div>
+  <h2>They agree before they talk. Talking finishes the job</h2>
+  <div class="cols"><div class="bodytext"><p>Before any discussion, six different model families' guesses correlate at 0.88. After two rounds of discussion: 0.98-0.99.</p>
+     <p>Seats: 6. Independent votes at the end: 1.02.</p></div><div class="figbox"><svg viewBox="0 0 520 260" class="fig"><path d="M 60 30 C 160 30, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 74 C 160 74, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 118 C 160 118, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 162 C 160 162, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 206 C 160 206, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><path d="M 60 250 C 160 250, 200 118, 268 118" stroke="#97a1b4" stroke-width="1.5" fill="none" opacity="0.6"/><circle cx="40" cy="30" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="74" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="118" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="162" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="206" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="40" cy="250" r="15" fill="#6f9fe8" opacity="0.85"/><circle cx="290" cy="118" r="34" fill="#e0a943"/><text x="290" y="126" font-size="17" font-weight="700" fill="#111" text-anchor="middle">1.02</text><text x="40" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">6 councilors</text><text x="290" y="240" font-size="13" fill="#97a1b4" text-anchor="middle">independent minds after two rounds of talk</text></svg></div></div>
   <div class="pagenum">5 / 12</div>
 </section>
 <section class="slide" data-i="5">
-  <div class="kick">finding two</div>
-  <h2>It's not collusion — it's shared DNA</h2>
-  <div class="body"><p>Copies of the same model agree <b>+0.08 more</b> than unrelated models <i>before saying a word</i> — the exact same gap we measured in the wild towns (+0.078).</p><p>They didn't coordinate. They <b>think alike because they're built alike.</b> Any collusion alarm that treats "they agree" as "they conspired" is broken by design.</p></div>
+  <div class="kick">result 2</div>
+  <h2>Same weights agree more, around +0.08, before a word is said</h2>
+  <div class="cols"><div class="bodytext"><p>Copies of one model agree about 8 points more than unrelated pairs, in both the wild towns (+0.078) and our riddles (+0.082). At the certainty ceiling the gap is +0.000: when everyone is sure, everyone is the same.</p>
+     <p>This is shared training, not shared plans. Any collusion detector built on "they agree" flags the honest.</p></div><div class="figbox"><svg viewBox="0 0 620 160" class="fig"><text x="170" y="38" font-size="13" fill="#e8e6e1" text-anchor="end">wild towns</text><rect x="180" y="20" width="234" height="24" rx="4" fill="#6f9fe8"/><text x="424" y="37" font-size="13" fill="#97a1b4">+0.078</text><text x="170" y="84" font-size="13" fill="#e8e6e1" text-anchor="end">our riddles</text><rect x="180" y="66" width="246" height="24" rx="4" fill="#6f9fe8"/><text x="436" y="83" font-size="13" fill="#97a1b4">+0.082</text><text x="170" y="130" font-size="13" fill="#e8e6e1" text-anchor="end">at certainty ceiling</text><rect x="180" y="112" width="4" height="24" rx="4" fill="#6f9fe8"/><text x="194" y="129" font-size="13" fill="#97a1b4">+0.000</text><text x="180" y="155" font-size="12" fill="#97a1b4">extra agreement between copies of the same model vs pairs of different ones (pre-talk)</text></svg></div></div>
   <div class="pagenum">6 / 12</div>
 </section>
 <section class="slide" data-i="6">
-  <div class="kick">boundary check</div>
-  <h2>We tried to make them confidently wrong — and couldn't</h2>
-  <div class="body"><p>We wrote harder and harder riddles — even ones only solvable by a single quiet clue. <b>The AIs got every single one right.</b></p><p>So the deadly "medium-agreement error band" isn't about logic being hard. It appears when evidence is <b>social</b>: bluffs, claims, things you can't verify.</p><p class='dim'>Honest result: that's a boundary on our finding, and we say so.</p></div>
+  <div class="kick">boundary</div>
+  <h2>We could not manufacture the error band</h2>
+  <div class="cols"><div class="bodytext"><p>We hardened the riddles: eight suspects, decoys that only a negative sighting rules out. The panels still answered everything right. 100% accuracy, band empty.</p>
+     <p>The dangerous consensus needs social evidence: bluffs, role claims, statements that cannot be checked. Logic difficulty alone does not produce it. That is the honest limit of this experiment.</p></div><div class="figbox"><svg viewBox="0 0 640 90" class="fig"><rect x="30" y="20" width="580" height="34" rx="8" fill="#8fce9b" opacity="0.25"/><text x="320" y="42" font-size="15" fill="#8fce9b" text-anchor="middle">2 difficulty tiers · 94 panels · 0 wrong answers</text><text x="320" y="72" font-size="12" fill="#97a1b4" text-anchor="middle">the band lives where statements cannot be verified, not where reasoning is hard</text></svg></div></div>
   <div class="pagenum">7 / 12</div>
 </section>
 <section class="slide" data-i="7">
-  <div class="kick">the fixes that failed</div>
-  <h2>Promise-keeping and dissenters don't help</h2>
-  <div class="body"><p><b>Fix A — lock your first vote publicly:</b> the council collapses the same way anyway (99% alike).</p><p><b>Fix B — assign one AI to always argue against the crowd:</b> it fights, then joins. In 30 of 30 cases the designated dissenter ends up believing the majority (ρ=0.995).</p><p class='dim'>Behavioral remedies: two for two, dead.</p></div>
+  <div class="kick">remedies</div>
+  <h2>The fixes that failed, and the one that partly works</h2>
+  <div class="cols"><div class="bodytext"><p>Two behavioral fixes, nothing. One structural fix, something.</p></div><div class="figbox"><svg viewBox="0 0 640 190" class="fig"><circle cx="24" cy="20" r="7" fill="#e07b6f"/><text x="44" y="24" font-size="14" fill="#e8e6e1">locked first votes</text><text x="330" y="24" font-size="13" fill="#e07b6f">collapse unchanged</text><text x="330" y="40" font-size="11" fill="#97a1b4">still ~1.0 mind</text><circle cx="24" cy="64" r="7" fill="#e07b6f"/><text x="44" y="68" font-size="14" fill="#e8e6e1">hired dissenter</text><text x="330" y="68" font-size="13" fill="#e07b6f">joins the majority 30/30</text><text x="330" y="84" font-size="11" fill="#97a1b4">ρ = 0.995 with the crowd</text><line x1="30" y1="104" x2="560" y2="104" stroke="#39404e"/><circle cx="24" cy="152" r="7" fill="#e0a943"/><text x="44" y="156" font-size="14" fill="#e8e6e1">clue jigsaw (each clue → 3 of 6)</text><text x="330" y="156" font-size="13" fill="#e0a943">priors 0.88 → 0.68, final 0.85</text><text x="330" y="172" font-size="11" fill="#97a1b4">works partway, costs 13% accuracy</text></svg></div></div>
   <div class="pagenum">8 / 12</div>
 </section>
 <section class="slide" data-i="8">
-  <div class="kick">the one lever that works (a bit)</div>
-  <h2>Split the evidence — the 'jigsaw'</h2>
-  <div class="body"><p>Give each councilor only <b>part of the clues</b>. Their first guesses stop agreeing: 88% → 68% correlation.</p><p>But after they talk, most of that independence is handed back — and hidden clues cost accuracy (~87% vs 100%).</p><p class='big'>Diversity is <b>purchasable, partial, and priced</b>. Nothing we tried protects it through discussion.</p></div>
+  <div class="kick">how</div>
+  <h2>The jigsaw: split the evidence</h2>
+  <div class="cols"><div class="bodytext"><p>Each councilor sees only part of the clues. First guesses stop lining up (0.88 → 0.68). After discussion, most of that gain is gone (0.85), and hidden clues cost accuracy. Independence is purchasable, partial, and priced. Nothing we ran protects it through discussion.</p></div><div class="figbox"><svg viewBox="0 0 620 220" class="fig"><text x="20" y="40" font-size="12" fill="#97a1b4">agent 1</text><text x="20" y="70" font-size="12" fill="#97a1b4">agent 2</text><text x="20" y="100" font-size="12" fill="#97a1b4">agent 3</text><text x="20" y="130" font-size="12" fill="#97a1b4">agent 4</text><text x="20" y="160" font-size="12" fill="#97a1b4">agent 5</text><text x="20" y="190" font-size="12" fill="#97a1b4">agent 6</text><text x="150" y="16" font-size="12" fill="#97a1b4" text-anchor="middle">clue 1</text><rect x="112" y="24" width="76" height="22" rx="4" fill="#e0a943" opacity="0.95"/><rect x="112" y="54" width="76" height="22" rx="4" fill="#e0a943" opacity="0.95"/><rect x="112" y="84" width="76" height="22" rx="4" fill="#e0a943" opacity="0.95"/><rect x="112" y="114" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="112" y="144" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="112" y="174" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><text x="240" y="16" font-size="12" fill="#97a1b4" text-anchor="middle">clue 2</text><rect x="202" y="24" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="202" y="54" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="202" y="84" width="76" height="22" rx="4" fill="#6f9fe8" opacity="0.95"/><rect x="202" y="114" width="76" height="22" rx="4" fill="#6f9fe8" opacity="0.95"/><rect x="202" y="144" width="76" height="22" rx="4" fill="#6f9fe8" opacity="0.95"/><rect x="202" y="174" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><text x="330" y="16" font-size="12" fill="#97a1b4" text-anchor="middle">clue 3</text><rect x="292" y="24" width="76" height="22" rx="4" fill="#8fce9b" opacity="0.95"/><rect x="292" y="54" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="292" y="84" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="292" y="114" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="292" y="144" width="76" height="22" rx="4" fill="#8fce9b" opacity="0.95"/><rect x="292" y="174" width="76" height="22" rx="4" fill="#8fce9b" opacity="0.95"/><text x="420" y="16" font-size="12" fill="#97a1b4" text-anchor="middle">clue 4</text><rect x="382" y="24" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="382" y="54" width="76" height="22" rx="4" fill="#b58ac9" opacity="0.95"/><rect x="382" y="84" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="382" y="114" width="76" height="22" rx="4" fill="#b58ac9" opacity="0.95"/><rect x="382" y="144" width="76" height="22" rx="4" fill="#20263a" opacity="0.5"/><rect x="382" y="174" width="76" height="22" rx="4" fill="#b58ac9" opacity="0.95"/><text x="330" y="120" font-size="12" fill="#97a1b4">every clue seen by 3 agents; nobody sees all four</text></svg></div></div>
   <div class="pagenum">9 / 12</div>
 </section>
 <section class="slide" data-i="9">
-  <div class="kick">the safety takeaway</div>
-  <h2>You can't detect the swarm by listening to it</h2>
-  <div class="body"><p>If you flag "talking alike" as collusion, your detector cries wolf on <b>100% of honest same-model agents — and 66–97% of honest strangers too</b>.</p><p class='big'>Calibrate the detector properly and it catches <b>no one</b>. Agreement carries no signal at the pair level.</p></div>
+  <div class="kick">detection</div>
+  <h2>You cannot hear the swarm by listening to it</h2>
+  <div class="cols"><div class="bodytext"><p>Take the obvious collusion detector ("flag pairs whose beliefs agree"). Alarm rates on honest panels:</p></div><div class="figbox"><svg viewBox="0 0 640 200" class="fig"><text x="190" y="42" font-size="13" fill="#e8e6e1" text-anchor="end">honest copies of one model</text><rect x="200" y="24" width="320.0" height="26" rx="4" fill="#e07b6f"/><text x="530" y="42" font-size="13" fill="#e07b6f">100%</text><text x="190" y="96" font-size="13" fill="#e8e6e1" text-anchor="end">honest strangers</text><rect x="200" y="78" width="256.0" height="26" rx="4" fill="#e07b6f"/><text x="466" y="96" font-size="13" fill="#e07b6f">80%+</text><text x="190" y="166" font-size="12" fill="#97a1b4">false-alarm rate of an agreement-as-collusion detector</text><text x="190" y="184" font-size="12" fill="#97a1b4">properly calibrated, it flags nobody at all</text></svg></div></div>
   <div class="pagenum">10 / 12</div>
 </section>
 <section class="slide" data-i="10">
-  <div class="kick">the rule</div>
-  <h2>Count independence, not agents</h2>
-  <div class="body"><p class='big'>Before you trust an AI team's vote, ask: <b>"how many independent minds is this really?"</b></p><p>Measure the effective number (N_eff) — don't count seats. Use mixed families if you want diversity. Split information if you must — and pay the accuracy price.</p><p>And when a council is unanimous at 85%: that's the moment to worry, not relax.</p></div>
+  <div class="kick">so what</div>
+  <h2>Count minds, not agents</h2>
+  <div class="cols"><div class="bodytext"><p>Before trusting a multi-agent vote, compute its effective size. Six seats with ρ=0.9 is not redundancy, it is one voter with an echo.</p></div><div class="figbox"><svg viewBox="0 0 640 130" class="fig"><text x="320" y="55" font-size="26" fill="#e8e6e1" text-anchor="middle">N<tspan baseline-shift="sub" font-size="16">eff</tspan> = n / (1 + (n−1)·ρ)</text><text x="320" y="95" font-size="14" fill="#97a1b4" text-anchor="middle">ρ = how similar their guesses are. ρ→1 means the council is one mind.</text></svg></div></div>
   <div class="pagenum">11 / 12</div>
 </section>
 <section class="slide" data-i="11">
   <div class="kick">receipts</div>
-  <h2>Everything above is reproducible</h2>
-  <div class="body"><p>Every number regenerates from raw call logs in the repo (11,402 records, pre-registered). Live data page: <b>lock-before-you-talk.vercel.app</b></p><p class='dim'>Why Councils Collapse · Swarm Alignment Hackathon 2026 · weekend build on Adaption-hosted open models</p></div>
+  <h2>Every number here regenerates</h2>
+  <div class="cols"><div class="bodytext"><p>11,402 logged calls, seedable scenario bank, append-only logs: <code>runs/mg.jsonl</code>, <code>runs/push.jsonl</code>, <code>runs/pushJ.jsonl</code> · analysis: <code>python -m src.analyze</code> and <code>python runs/figures.py</code>. Hypotheses frozen in git before the first call. Live data page: <a href="/">lock-before-you-talk.vercel.app</a></p></div><div class="figbox"><svg viewBox="0 0 640 80" class="fig"><text x="320" y="38" font-size="15" fill="#97a1b4" text-anchor="middle">Swarm Alignment Hackathon 2026 · weekend build · Adaption-hosted open models</text><text x="320" y="62" font-size="13" fill="#97a1b4" text-anchor="middle">towns data predates the weekend, and says so in the report</text></svg></div></div>
   <div class="pagenum">12 / 12</div>
 </section>
 <div id="dots"><span class="dot on" data-i="0"></span><span class="dot" data-i="1"></span><span class="dot" data-i="2"></span><span class="dot" data-i="3"></span><span class="dot" data-i="4"></span><span class="dot" data-i="5"></span><span class="dot" data-i="6"></span><span class="dot" data-i="7"></span><span class="dot" data-i="8"></span><span class="dot" data-i="9"></span><span class="dot" data-i="10"></span><span class="dot" data-i="11"></span></div>
