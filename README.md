@@ -2,9 +2,11 @@
 
 **One-line:** Do LLM swarm beliefs collapse to one voice under discussion, does a committed-independent-first-read rule stop it, and do same-weights copies agree before they talk?
 
+Repo: https://github.com/vdimarco/apart-swarm-alignment · live report: https://lock-before-you-talk.vercel.app · slides: https://lock-before-you-talk.vercel.app/slides.html
+
 Pre-registration and full design: [`docs/superpowers/specs/2026-11-07-lock-before-you-talk-design.md`](docs/superpowers/specs/2026-11-07-lock-before-you-talk-design.md)
 
-Tracks: 2 (Science of Agent Networks) + 4 (Multi-Agent Oversight). Companion piece: "Why Towns Hang Their Own" (observational analysis of ~1,800 LLM social-deduction game-days, pre-existing data, marked as such).
+Tracks: 2 (Science of Agent Networks) + 4 (Multi-Agent Oversight). Companion piece: "Why Towns Hang Their Own" (observational analysis of ~1,800 game-days of LLM social-deduction games from Dwarkesh Patel's **Blood on the Clocktower** LLM benchmark, pre-existing data collected before the sprint, marked as such everywhere it appears).
 
 ## Setup
 
