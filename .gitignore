@@ -1,7 +1,7 @@
 *.pyc
 __pycache__/
 .env
-runs/*.jsonl
-runs/*_metrics.json
+runs/selftest_*
+runs/selftest_*_metrics.json
 scratch/
 report/.vercel/
