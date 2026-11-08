@@ -42,6 +42,30 @@ python -m src.scenarios --check
 python -m src.harness --config runs/arm_config_mg.json --label mg
 ```
 
+## Second, independent review
+
+A second AI-assisted review (branch `review/evidence-audit`, merged) worked without the logs and added offline checks:
+an exact counterexample for the within-case agreement measure, a check that the original jigsaw split gives only two
+distinct clue packets, and probes that reproduce two harness bugs (lost discussion text on resume; first reads never
+passed to later prompts). The repaired harness keeps both. Its claim audit is in
+[`report/audit/claim-audit.md`](report/audit/claim-audit.md); its draft, written before the logs were available, is in
+`report/archive/review-draft-without-logs.md`.
+
+```bash
+python -m src.audit                       # offline checks (counterexample, clue allocation, solver)
+python -m unittest discover -s tests -v   # 12 tests
+python -m src.across_case                 # across-case error correlation before and after talk
+```
+
+New model runs use protocol `2-audit-20261108` (`runs/arm_config_audit_smoke.json`), which refuses to append to the
+historical logs, adds private reflection (C4) and a balanced split with six distinct clue packets. See
+[`review/experiment-amendment.md`](review/experiment-amendment.md). No new paid runs were made.
+
+## Data attribution
+
+AmongUs-X summaries in `runs/towns/` come from the [AmongUs-X dataset](https://huggingface.co/datasets/Among-us-X/AmongUs-X)
+(CC BY 4.0) and are unrelated to the Clocktower study. Project code is MIT-licensed.
+
 ## Pre-registration
 
 Hypotheses H1–H4 were committed before the first model call (commit `b01f872`) in

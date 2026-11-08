@@ -1,0 +1,22 @@
+{
+  "source": "fake-client probes of git commit e50bd13",
+  "model_api_calls": 0,
+  "normal_reply_sees_saved_statements": true,
+  "resumed_reply_sees_saved_statements": false,
+  "recorded_initial_estimate_present_in_any_later_prompt": false,
+  "malformed_probability_inputs": {
+    "infinity": {
+      "accepted": true,
+      "all_finite": false
+    },
+    "negative": {
+      "accepted": true,
+      "all_finite": true
+    },
+    "boolean": {
+      "accepted": true,
+      "all_finite": true
+    }
+  },
+  "scope": "These probes establish code behavior. The number of historical model panels affected requires the original logs."
+}

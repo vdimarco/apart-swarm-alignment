@@ -1,5 +1,9 @@
 # PLAN.md — Lock Before You Talk (Swarm Alignment Hackathon 2026)
 
+## Evidence review on 8 November 2026
+
+The [claim audit](report/audit/claim-audit.md) supersedes the scientific interpretations below. The old notes remain as history. The [revised report](report/draft.md) leads with verified offline checks. The call logs are absent from the public repository, so the previous empirical results require review. The new harness uses a versioned protocol and a fresh run label. The experiment amendment is in [review/experiment-amendment.md](review/experiment-amendment.md). No new model calls were made during this audit. Some historical entries below use February dates; resolve them from original records.
+
 > Project plan of record · Owner: Von (@vaughn) · Agent: Hermes
 > Created: 2026-11-07 · Status: in progress (Phase 2)
 > Repo: `~/Work/swarm-alignment-2026` · Deadline: **Sun 2026-11-08, 23:59 AoE**

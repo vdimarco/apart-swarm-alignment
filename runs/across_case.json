@@ -1,0 +1,58 @@
+[
+  {
+    "arm": "mg/M6/C2",
+    "cases": 60,
+    "pairs": 5,
+    "r_initial": 0.416,
+    "r_final": 0.769,
+    "neff_initial": 1.95,
+    "neff_final": 1.24,
+    "diff": 0.353,
+    "ci95": [
+      -0.003,
+      0.792
+    ]
+  },
+  {
+    "arm": "mg/M6/C3",
+    "cases": 60,
+    "pairs": 5,
+    "r_initial": 0.336,
+    "r_final": 0.744,
+    "neff_initial": 2.24,
+    "neff_final": 1.27,
+    "diff": 0.408,
+    "ci95": [
+      0.001,
+      0.687
+    ]
+  },
+  {
+    "arm": "push_da/M6DA/C2",
+    "cases": 60,
+    "pairs": 8,
+    "r_initial": 0.171,
+    "r_final": 0.557,
+    "neff_initial": 3.23,
+    "neff_final": 1.59,
+    "diff": 0.385,
+    "ci95": [
+      0.079,
+      0.626
+    ]
+  },
+  {
+    "arm": "pushJ/M6J/C2",
+    "cases": 60,
+    "pairs": 14,
+    "r_initial": 0.223,
+    "r_final": 0.464,
+    "neff_initial": 2.84,
+    "neff_final": 1.81,
+    "diff": 0.241,
+    "ci95": [
+      -0.057,
+      0.542
+    ]
+  }
+]

@@ -1,5 +1,7 @@
 # The Evidence Jigsaw (M6J arm)
 
+**Historical note, 8 November 2026:** This document records the earlier interpretation. The evidence review supersedes its independent-forecaster, 65% loss, and unavoidable accuracy-cost claims. See [the reviewed report](../report/draft.md) and [full claim audit](../report/audit/claim-audit.md). The original allocation has two distinct packets; a symbolic probability average solves all 60 assignments.
+
 **One-line:** split the clues across panel members so priors decorrelate by construction — the only intervention measured to move any number in the remedy arc, and a *partial, lossy* one.
 
 ## Mechanism

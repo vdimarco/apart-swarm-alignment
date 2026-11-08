@@ -161,6 +161,23 @@ def clue_partition(n_clues: int, n_agents: int, seed_key: int, copies: int = 3) 
     return [sorted(g) for g in groups]
 
 
+def clue_partition_balanced(n_clues: int, n_agents: int, seed_key: int, copies: int = 3) -> list[list[int]]:
+    """New exploratory arm: six distinct packets with three copies of each clue.
+
+    Three clues use the three singletons and three pairs. Four clues use all
+    six pairs. Shuffle packet ownership so model positions do not fix access.
+    The historical rr3 function remains available for exact reproduction.
+    """
+    if n_agents != 6 or copies != 3 or n_clues not in (3, 4):
+        raise ValueError("balanced3 requires six agents and three or four clues")
+    from itertools import combinations
+    packets = [list(c) for c in combinations(range(n_clues), 2)]
+    if n_clues == 3:
+        packets += [[i] for i in range(n_clues)]
+    random.Random(seed_key).shuffle(packets)
+    return packets
+
+
 @dataclass
 class Suspect:
     name: str

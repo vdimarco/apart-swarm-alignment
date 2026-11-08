@@ -1,0 +1,2108 @@
+{
+  "manifest": {
+    "audit_baseline_commit": "e50bd13",
+    "missing_inputs": [
+      "runs/mg.jsonl",
+      "runs/push.jsonl",
+      "runs/pushJ.jsonl",
+      "runs/collusion_fp_metrics.json"
+    ],
+    "sha256": {
+      "runs/scenarios.json": "34bfcc94c94b6b2f1374fa52ce092f442509a889657bbd7dcb5fddc14c45f6fb",
+      "runs/scenarios_hard.json": "497f38a65887c09a5ff1100eb6f0a242b6d1796378d828fa0988d45de4ebe063",
+      "runs/pushJ_summary.json": "239554750160a78193d33825d85d3c02fc892f68ed08abe2a09a6fe8e9702727"
+    }
+  },
+  "metric_control": {
+    "source": "synthetic mathematical control; no LLM calls",
+    "seed": 20261108,
+    "repetitions": 50000,
+    "agents": 6,
+    "classes": 6,
+    "class_profile_pearson_mean": 1.0,
+    "reported_formula_result": 1.0,
+    "error_correlation_across_independent_repetitions": 0.0015646840979203212,
+    "empirical_variance_equivalent_count": 5.9534546882555555,
+    "theoretical_variance_equivalent_count": 6,
+    "all_individual_argmax_answers_correct": true,
+    "interpretation": "Within-case class-profile similarity does not identify error dependence."
+  },
+  "scenario_checks": {
+    "source": "enumeration of committed scenario banks and clue assignments",
+    "standard_real_cases": 30,
+    "hard_cases": 12,
+    "validation_errors": [],
+    "placebo_cases": 30,
+    "placebo_matching_suspect_counts": {
+      "0": 26,
+      "1": 4
+    },
+    "jigsaw_unique_packets_per_panel": {
+      "2": 60
+    },
+    "jigsaw_individual_packet_count": 360,
+    "jigsaw_individually_sufficient_packets": 171,
+    "jigsaw_individually_ambiguous_packets": 189,
+    "symbolic_uniform_over_compatible_suspects_panel_mean": {
+      "correct": 60,
+      "panels": 60,
+      "minimum_winning_margin": 0.125,
+      "information": "Only each agent's assigned clue subset is used. No dialogue, truth lookup, or LLM is used to choose an answer. Truth is used only for scoring."
+    },
+    "records": [
+      {
+        "scenario_id": "C00",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.16666666666666663
+      },
+      {
+        "scenario_id": "C00",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C01",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.125
+      },
+      {
+        "scenario_id": "C01",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.125
+      },
+      {
+        "scenario_id": "C02",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C02",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.25
+      },
+      {
+        "scenario_id": "C03",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C03",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.25
+      },
+      {
+        "scenario_id": "C04",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C04",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C05",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C05",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C06",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C06",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C07",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.16666666666666663
+      },
+      {
+        "scenario_id": "C07",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C08",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C08",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C09",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C09",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C10",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C10",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C11",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C11",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C12",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.16666666666666663
+      },
+      {
+        "scenario_id": "C12",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.16666666666666663
+      },
+      {
+        "scenario_id": "C13",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C13",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C14",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C14",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C15",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C15",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C16",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C16",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C17",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.25
+      },
+      {
+        "scenario_id": "C17",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "C18",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C18",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C19",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 1.0
+      },
+      {
+        "scenario_id": "C19",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A00",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A00",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A01",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A01",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A02",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A02",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A03",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A03",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A04",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A04",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A05",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A05",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A06",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A06",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A07",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A07",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A08",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A08",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A09",
+        "replicate": 0,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      },
+      {
+        "scenario_id": "A09",
+        "replicate": 1,
+        "unique_packets": 2,
+        "packet_indices": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "oracle_mean_correct": true,
+        "margin": 0.5
+      }
+    ]
+  },
+  "towns": {
+    "source": "committed AmongUs-X per-game summary lines; separate from Clocktower",
+    "files": 80,
+    "games": 600,
+    "duplicate_file_game_keys": [],
+    "by_town": {
+      "claude": {
+        "wins": 147,
+        "games": 180,
+        "rate": 0.8166666666666667,
+        "wilson95_descriptive": [
+          0.7537265501833472,
+          0.866372967799631
+        ]
+      },
+      "gpt": {
+        "wins": 220,
+        "games": 300,
+        "rate": 0.7333333333333333,
+        "wilson95_descriptive": [
+          0.680572605868549,
+          0.7801940075599961
+        ]
+      },
+      "mixed": {
+        "wins": 87,
+        "games": 120,
+        "rate": 0.725,
+        "wilson95_descriptive": [
+          0.6390703417242319,
+          0.7969710333873515
+        ]
+      }
+    },
+    "by_configuration": {
+      "claude/5/1": {
+        "wins": 44,
+        "games": 45,
+        "rate": 0.9777777777777777,
+        "wilson95_descriptive": [
+          0.8843331823158513,
+          0.9960664011171667
+        ]
+      },
+      "claude/6/1": {
+        "wins": 44,
+        "games": 45,
+        "rate": 0.9777777777777777,
+        "wilson95_descriptive": [
+          0.8843331823158513,
+          0.9960664011171667
+        ]
+      },
+      "claude/6/2": {
+        "wins": 24,
+        "games": 45,
+        "rate": 0.5333333333333333,
+        "wilson95_descriptive": [
+          0.3907745474012537,
+          0.670648679349887
+        ]
+      },
+      "claude/7/2": {
+        "wins": 35,
+        "games": 45,
+        "rate": 0.7777777777777778,
+        "wilson95_descriptive": [
+          0.6373070782524372,
+          0.8745531446737361
+        ]
+      },
+      "gpt/5/1": {
+        "wins": 70,
+        "games": 75,
+        "rate": 0.9333333333333333,
+        "wilson95_descriptive": [
+          0.8532493994143954,
+          0.9711899371005063
+        ]
+      },
+      "gpt/6/1": {
+        "wins": 71,
+        "games": 75,
+        "rate": 0.9466666666666667,
+        "wilson95_descriptive": [
+          0.8707401284620144,
+          0.9790665722533456
+        ]
+      },
+      "gpt/6/2": {
+        "wins": 26,
+        "games": 75,
+        "rate": 0.3466666666666667,
+        "wilson95_descriptive": [
+          0.24882277263674593,
+          0.4594525390579812
+        ]
+      },
+      "gpt/7/2": {
+        "wins": 53,
+        "games": 75,
+        "rate": 0.7066666666666667,
+        "wilson95_descriptive": [
+          0.5955955483261394,
+          0.7975985967809675
+        ]
+      },
+      "mixed/5/1": {
+        "wins": 29,
+        "games": 30,
+        "rate": 0.9666666666666667,
+        "wilson95_descriptive": [
+          0.8332960900859082,
+          0.9940914096183874
+        ]
+      },
+      "mixed/6/1": {
+        "wins": 28,
+        "games": 30,
+        "rate": 0.9333333333333333,
+        "wilson95_descriptive": [
+          0.7867654163738308,
+          0.9815229762087295
+        ]
+      },
+      "mixed/6/2": {
+        "wins": 12,
+        "games": 30,
+        "rate": 0.4,
+        "wilson95_descriptive": [
+          0.24590628116801852,
+          0.5767963974667752
+        ]
+      },
+      "mixed/7/2": {
+        "wins": 18,
+        "games": 30,
+        "rate": 0.6,
+        "wilson95_descriptive": [
+          0.42320360253322475,
+          0.7540937188319815
+        ]
+      }
+    },
+    "model_ids": {
+      "claude": [
+        "claude-haiku-4-5",
+        "claude-haiku-4-5-thinking",
+        "claude-sonnet-4-6"
+      ],
+      "gpt": [
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-5.4-mini-reasoning",
+        "gpt-5.4-nano",
+        "gpt-5.4-nano-reasoning"
+      ],
+      "mixed": [
+        "claude-haiku-4-5-thinking",
+        "claude-sonnet-4-6",
+        "gpt-5.4-mini-reasoning",
+        "gpt-5.4-nano-reasoning"
+      ]
+    },
+    "interval_note": "Wilson intervals treat games as independent and are descriptive. Use run-level resampling for inferential comparisons."
+  },
+  "arithmetic": {
+    "jigsaw_from_committed_summary": {
+      "wins": 52,
+      "scored_panels": 60,
+      "accuracy": 0.8666666666666667,
+      "wilson95_if_independent_panels": [
+        0.7583484032350039,
+        0.9308589051941303
+      ],
+      "independent_case_clusters": 30,
+      "interval_note": "Illustrative binomial interval; two replicates per case require case-level inference from logs."
+    },
+    "stated_log_rows_total": 8207,
+    "rows_expected_from_configs": {
+      "mg_M6_plus_D": 3600,
+      "pushJ": 1800
+    },
+    "stated_pushJ_rows": 1780,
+    "rho_upper_support": 1.0,
+    "claimed_calibrated_threshold": 1.27,
+    "zero_failures_one_sided_95_upper_if_independent": {
+      "n30": 0.09503385285530419,
+      "n60": 0.04870291331009746,
+      "n94": 0.03136701207878767
+    },
+    "warning": "Log row counts are reported, not recomputed. Scored, complete, and planned panels differ."
+  }
+}

@@ -1,4 +1,10 @@
-"""Analysis for 'Lock Before You Talk' sweeps.
+"""Historical analysis for 'Lock Before You Talk' sweeps.
+
+AUDIT NOTE (2026-11-08): its within-case probability correlation is a
+descriptive similarity, not error dependence. The n_eff output must not be
+interpreted as a count of independent agents. The pair bootstrap also ignores
+case clusters. Retained for historical reproduction; use src.reanalyze for
+the reviewed analysis. See report/audit/claim-audit.md.
 
 Reads runs/<label>.jsonl + runs/scenarios.json, computes:
   - belief-vector pairwise correlation & effective N per arm/condition/stage

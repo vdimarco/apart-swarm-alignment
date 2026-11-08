@@ -1,9 +1,14 @@
 """Panel experiment harness for 'Lock Before You Talk'.
 
-For every (scenario, arm, condition, seed) cell, runs a 5-agent panel:
+For every (scenario, arm, condition, replicate) cell, runs a configured panel:
   C1: initial estimate only
   C2: initial -> statement -> reply -> final estimate (free discussion)
   C3: initial (locked/committed framing) -> statement -> reply -> final estimate
+  C4: initial -> private statement -> private reflection -> final estimate
+
+Version 2 restores cached messages on resume and carries the first estimate
+forward. Historical version-1 logs must use a separate label. C3 is commitment
+framing; it does not freeze the panel's final decision.
 
 Every model call is appended to runs/<label>.jsonl with prompts and raw output,
 so resume is possible and every number in the report is traceable.
@@ -13,26 +18,29 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import hashlib
+import math
 import re
 import time
 from dataclasses import asdict
 from pathlib import Path
 
 from .client import ModelClient
-from .scenarios import Scenario, Suspect, clue_partition, render_subset, render_text
+from .scenarios import Scenario, Suspect, clue_partition, clue_partition_balanced, render_subset, render_text
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNS = ROOT / "runs"
+PROTOCOL_VERSION = "2-audit-20261108"
 
 SYSTEM_ESTIMATE = (
-    "You are one of five independent councilors judging a village case. "
-    "You receive a case file listing six suspects and witness statements. "
+    "You are a councilor judging a village case. "
+    "You receive a case file listing suspects and witness statements. "
     "Judge only from the evidence given. Reply with STRICT JSON and nothing else: "
     '{"probabilities": {"Name": 0.0, ...}} with one entry per suspect, values summing to 1.'
 )
 
 SYSTEM_DISCUSS = (
-    "You are one of five councilors judging a village case. Write clearly and briefly. "
+    "You are a councilor judging a village case. Write clearly and briefly. "
     "Do not reveal what model or system you are. Do not address the user; write as a council statement."
 )
 
@@ -106,24 +114,27 @@ def parse_probs(text: str, suspects: list[str]) -> dict[str, float] | None:
     cands.extend(windows)
     for cand in cands:
         try:
-            data = json.loads(cand)
+            data = json.loads(cand, parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x)))
         except Exception:
             continue
         probs = data.get("probabilities", data) if isinstance(data, dict) else None
         if not isinstance(probs, dict):
             continue
+        keys = [k.strip().lower() for k in probs if isinstance(k, str)]
+        if len(keys) != len(suspects) or set(keys) != {s.lower() for s in suspects}:
+            continue
         out: dict[str, float] = {}
         for name in suspects:
             val = None
             for k, v in probs.items():
-                if k.strip().lower() == name.lower() and isinstance(v, (int, float)):
+                if isinstance(k, str) and k.strip().lower() == name.lower() and isinstance(v, (int, float)) and not isinstance(v, bool):
                     val = float(v)
-            if val is None:
+            if val is None or not math.isfinite(val) or not 0 <= val <= 1:
                 break
-            out[name] = max(0.0, val)
+            out[name] = val
         if len(out) == len(suspects):
             total = sum(out.values())
-            if total > 0:
+            if total > 0 and abs(total - 1.0) <= 0.02:
                 return {k: v / total for k, v in out.items()}
     return None
 
@@ -133,17 +144,22 @@ def _record(rec: dict, fh) -> None:
     fh.flush()
 
 
-def _done_keys(label: str) -> set[tuple]:
+def _completed_records(label: str, config_sha256: str) -> dict[tuple, dict]:
     path = RUNS / f"{label}.jsonl"
-    keys = set()
+    records = {}
     if path.exists():
         for line in path.read_text().splitlines():
             try:
                 r = json.loads(line)
-            except Exception:
-                continue
-            keys.add((r["arm"], r["cond"], r["seed"], r["scenario_id"], r["agent_idx"], r["stage"]))
-    return keys
+            except Exception as exc:
+                raise ValueError(f"Invalid JSON in {path}; repair the log before resuming") from exc
+            if r.get("protocol_version") != PROTOCOL_VERSION or r.get("config_sha256") != config_sha256:
+                raise ValueError("Existing log uses a different protocol or config. Use a new label; preserve the old run.")
+            key = (r["arm"], r["cond"], r["seed"], r["scenario_id"], r["agent_idx"], r["stage"])
+            if key in records:
+                raise ValueError(f"Duplicate stage key in {path}: {key}")
+            records[key] = r
+    return records
 
 
 async def _call(client, model, system, messages, max_tokens, temperature):
@@ -158,7 +174,7 @@ async def run_panel(
     cond: str,
     seed: int,
     label: str,
-    done: set[tuple],
+    done: dict[tuple, dict],
     log_fh,
     verbose: bool = False,
 ) -> int:
@@ -173,7 +189,8 @@ async def run_panel(
     else:
         models = [fam_a] * (cfg["panel_size"] - cfg["panel_size"] // 2) + [fam_b] * (cfg["panel_size"] // 2)
     panel_size = len(models)
-    framing = {"C1": C1_FRAMING, "C2": C2_FRAMING, "C3": C3_FRAMING}[cond]
+    framing = {"C1": C1_FRAMING, "C2": C2_FRAMING, "C3": C3_FRAMING, "C4": C2_FRAMING}[cond]
+    config_sha256 = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()
     suspects = [s.name for s in scenario.suspects]
     n_calls = 0
 
@@ -181,22 +198,31 @@ async def run_panel(
         nonlocal n_calls
         key = (arm, cond, seed, scenario.id, agent_idx, stage)
         if key in done:
-            return None
+            expected = hashlib.sha256(json.dumps(asdict(scenario), sort_keys=True).encode()).hexdigest()
+            if done[key].get("case_sha256") != expected:
+                raise ValueError("Scenario changed since this stage was recorded. Use a new run label.")
+            return done[key]
         prompt_msgs = [{"role": "user", "content": user_msg}]
         raw = await _call(client, models[agent_idx], system, prompt_msgs, max_tokens, cfg["temperature"])
         probs = parse_probs(raw, suspects) if expect_probs else None
-        _record({
+        record = {
             "run": label, "arm": arm, "cond": cond, "seed": seed,
             "scenario_id": scenario.id, "kind": scenario.kind,
             "agent_idx": agent_idx, "model": models[agent_idx], "stage": stage,
             "messages": prompt_msgs, "raw": raw, "probs": probs,
+            "system": system, "max_output_tokens": max_tokens,
+            "temperature": cfg["temperature"], "panel_size": panel_size,
+            "protocol_version": PROTOCOL_VERSION, "config_sha256": config_sha256,
+            "case_sha256": hashlib.sha256(json.dumps(asdict(scenario), sort_keys=True).encode()).hexdigest(),
+            "replicate_note": "seed is a replicate label; the API is not given a random seed",
             "ts": time.time(),
-        }, log_fh)
-        done.add(key)
+        }
+        _record(record, log_fh)
+        done[key] = record
         n_calls += 1
         if verbose:
             print(f"  [{arm}/{cond}/s{seed}/{scenario.id}] agent{agent_idx} {stage}: {raw[:90]!r}")
-        return {"raw": raw, "probs": probs}
+        return record
 
     # stage: initial (concurrent across agents); per-agent clue partition if configured
     import zlib
@@ -204,7 +230,8 @@ async def run_panel(
     case_texts = []
     for i in range(panel_size):
         if part_cfg:
-            parts = clue_partition(len(scenario.clues), panel_size,
+            partition_fn = clue_partition_balanced if part_cfg == "balanced3" else clue_partition
+            parts = partition_fn(len(scenario.clues), panel_size,
                                    zlib.crc32(f"{scenario.id}:{seed}".encode()))
             case_texts.append(render_subset(scenario, parts[i]))
         else:
@@ -216,11 +243,13 @@ async def run_panel(
     if cond == "C1":
         return n_calls
 
+    own_initial = ["\n\nYOUR RECORDED INITIAL ESTIMATE:\n" + r["raw"] for r in initial]
+
     # stage: statements (concurrent); agent 0 may be the designated devil's advocate
     da = arm in (cfg.get("devils_advocate_arms") or [])
     stmt_systems = [(DA_SYSTEM if (da and i == 0) else SYSTEM_DISCUSS) for i in range(panel_size)]
     statements = await asyncio.gather(*[
-        stage_call("statement", i, stmt_systems[i], statement_prompt(case_texts[i], framing), 3000,
+        stage_call("statement", i, stmt_systems[i], statement_prompt(case_texts[i] + own_initial[i], framing), 3000,
                    expect_probs=False)
         for i in range(panel_size)
     ])
@@ -229,7 +258,9 @@ async def run_panel(
     # stage: replies (each agent sees the others' statements, anonymized)
     replies = await asyncio.gather(*[
         stage_call("reply", i, stmt_systems[i],
-                   reply_prompt(case_texts[i], [t for j, t in enumerate(texts) if j != i], texts[i], framing),
+                   (reply_prompt(case_texts[i] + own_initial[i], [t for j, t in enumerate(texts) if j != i], texts[i], framing)
+                    if cond != "C4" else case_texts[i] + own_initial[i] + "\n\nYOUR OWN STATEMENT:\n" + texts[i]
+                    + "\nPrivately check the evidence again. In at most four sentences, correct any error in your own reasoning."),
                    3000, expect_probs=False)
         for i in range(panel_size)
     ])
@@ -239,7 +270,9 @@ async def run_panel(
     transcript += [(f"Councilor {i+1} (reply)", (r["raw"] if r else "")) for i, r in enumerate(replies)]
 
     await asyncio.gather(*[
-        stage_call("final", i, SYSTEM_ESTIMATE, final_prompt(case_texts[i], transcript, framing), 5000)
+        stage_call("final", i, SYSTEM_ESTIMATE,
+                   final_prompt(case_texts[i] + own_initial[i],
+                                transcript if cond != "C4" else [("Your statement", texts[i]), ("Your reflection", replies[i]["raw"])], framing), 5000)
         for i in range(panel_size)
     ])
     return n_calls
@@ -256,12 +289,14 @@ async def main_async(args) -> None:
     if args.limit:
         scenarios = scenarios[: args.limit]
     if args.smoke:
-        scenarios = [next(s for s in scenarios if s.kind == "adversarial")]
-        cfg["arms"] = {"A": cfg["arms"]["A"]}
+        scenarios = [next((s for s in scenarios if s.kind.startswith("adversarial")),scenarios[0])]
+        first_arm = next(iter(cfg["arms"]))
+        cfg["arms"] = {first_arm: cfg["arms"][first_arm]}
         cfg["conditions"] = ["C2"]
         cfg["seeds"] = 1
 
-    done = _done_keys(args.label)
+    config_sha256 = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()
+    done = _completed_records(args.label, config_sha256)
     client = ModelClient()
     RUNS.mkdir(exist_ok=True)
     sem = asyncio.Semaphore(cfg.get("max_concurrency", 16))
