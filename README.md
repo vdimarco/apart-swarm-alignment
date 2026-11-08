@@ -6,7 +6,9 @@ Repo: https://github.com/vdimarco/apart-swarm-alignment · live report: https://
 
 Pre-registration and full design: [`docs/superpowers/specs/2026-11-07-lock-before-you-talk-design.md`](docs/superpowers/specs/2026-11-07-lock-before-you-talk-design.md)
 
-Tracks: 2 (Science of Agent Networks) + 4 (Multi-Agent Oversight). Companion piece: "Why Towns Hang Their Own" (observational analysis of ~1,800 game-days of LLM social-deduction games from Dwarkesh Patel's **Blood on the Clocktower** LLM benchmark, pre-existing data collected before the sprint, marked as such everywhere it appears).
+Tracks: 2 (Science of Agent Networks) + 4 (Multi-Agent Oversight). Companion submission: "Why Towns Hang Their Own" ([code](https://github.com/vdimarco/why-ai-towns-hang-their-own)), an analysis of 538 public games from Dwarkesh Patel's Clocktower Bench. The games are third-party data; that analysis, like everything in this repository, was done this weekend (November 7 to 8, 2026).
+
+**Audit status (November 8, 2026):** an audit found that the agreement measure behind the main results counts independent, correct agents as one voice. The fix, a test that shows the problem, and the re-analysis plan are in [`AUDIT.md`](AUDIT.md).
 
 ## Setup
 

@@ -1,8 +1,8 @@
 # Why Councils Collapse: LLM Panels Lose Independence Before They Finish Deliberating
 
 **Working draft for Apart Research Swarm Alignment Hackathon 2026 (Tracks 2 + 4).**
-Status: numbers below are verified from `runs/*.jsonl`; one results cell (jigsaw) pending tonight's run.
-Companion observational analysis: "Why Towns Hang Their Own" (pre-existing data, marked).
+Status (November 8, audit): R1, R2 and R4–R6 must be recomputed with the errors-only agreement measure before they can be reported. See `AUDIT.md`.
+Companion submission: "Why Towns Hang Their Own" (weekend analysis of third-party Clocktower Bench games).
 
 ---
 
@@ -20,14 +20,14 @@ Hammond et al. (2025) and the METR Hugging Face incident (2026) motivate swarm-l
 3. A three-layer discriminator (pre-talk gap, ceiling saturation, mechanism-proofness) separating architectural monoculture from agentic collusion.
 4. Quantified unworkability of agreement-based collusion detection (FPR 66–97% on honest strangers).
 
-## 2. Observational study: "Why Towns Hang Their Own" (pre-existing; weekend work = framing only)
+## 2. Companion study: "Why Towns Hang Their Own" (separate submission, weekend work on third-party Clocktower Bench data)
 
-From ~1,800 LLM social-deduction game-days (Claude/GPT/mixed teams):
-- 8 players → <2 effective forecasters by day 2, →≈1 by day 5.
-- Executions in the 75–90% agreement band are wrong 62% of the time; ≥90% band wrong 1%.
-- Evil players nominate wrong targets 4× more, but good players make ~70% of wrong-execution nominations (herding, not just deception).
-- Same-model pairs agree more than mixed pairs (+0.078, p<10⁻³, 8,275 pairs, controlling for private whispering and role).
-- Negative results: extremizing worsens Brier (0.980 vs 0.908 blind); no aggregation scheme beats plain mean; best individual unidentifiable ex ante.
+From 538 games and 14,440 daily belief probes (Claude/GPT/mixed teams):
+- About 8 good players carry the information of 1.8–2.3 independent forecasters on day 1 and about 1.1 by day 5 (agreement on innocent players only).
+- Executions of the town's top suspect are wrong 63% of the time below 90% agreement [60–67%] and 1% at 90% or more.
+- Evil players nominate 32% of wrong executions vs 6% of right ones; good players nominate 68% of wrong executions.
+- Same-model pairs agree more than mixed pairs (+0.082 per-game gap [0.065, 0.099]; +0.078 in a regression controlling for private whispers and roles).
+- Negative results: extremizing worsens Brier (0.980 vs 0.866 for the plain mean; 0.908 uniform); no aggregation scheme beats the plain mean; the best player cannot be picked in advance.
 
 ## 3. Controlled experiment
 
@@ -58,7 +58,7 @@ From ~1,800 LLM social-deduction game-days (Claude/GPT/mixed teams):
 
 ## 6. Limitations
 
-Synthetic trait-logic riddles ≠ open-ended swarm work; reasoning models at ceiling compress our uncertainty range; Adaption-hosted families only (no closed frontier models this weekend); 16–17% reasoning-truncation missingness recorded; observational data predates the sprint and is disclosed as such.
+Synthetic trait-logic riddles ≠ open-ended swarm work; reasoning models at ceiling compress our uncertainty range; Adaption-hosted families only (no closed frontier models this weekend); 16–17% reasoning-truncation missingness recorded; the companion study's games are third-party data; all analysis is weekend work.
 
 ## 7. Dual-use & ethics
 
@@ -66,4 +66,4 @@ Fictional case files; no harmful payloads, no real agents' infrastructure touche
 
 ## Provenance & reproducibility
 
-Scenario banks strictly seeded; every table number regenerates via `python -m src.analyze` and `python runs/figures.py` from `runs/*.jsonl` (append-only per-call logs with prompts). Pre-registration: commit b01f872 (hypotheses frozen prior to first model call). Towns analysis predates the weekend; experiment, analysis code, figures, and this report are weekend work.
+Scenario banks strictly seeded; every table number regenerates via `python -m src.analyze` and `python runs/figures.py` from `runs/*.jsonl` (append-only per-call logs with prompts). Pre-registration: commit b01f872 (hypotheses frozen prior to first model call). All analysis, the experiment, figures and this report are weekend work (November 7 to 8, 2026).

@@ -7,6 +7,8 @@
 ## Goal
 
 Submit a competitive Track 2+4 project to the Apart Research / AIAF Swarm Alignment Hackathon:
+> **Date note (Nov 8 audit):** log entries below dated 2026-02-20 and 2026-02-21 were written on November 7 to 8, 2026. All 31 commits are dated Nov 7 to 8, 2026; the dates in the text are wrong. The "pre-existing" label for the towns analysis below is also wrong: that analysis was done this weekend (see AUDIT.md).
+
 the observational report **"Why Towns Hang Their Own"** (pre-existing ~1,800 game-day LLM
 social-deduction dataset, marked pre-existing per rules) plus one fresh weekend experiment,
 **"Lock Before You Talk"** — a controlled test of belief-collapse in LLM panels and of a

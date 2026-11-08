@@ -69,11 +69,48 @@ def mean(xs):
 
 def n_eff(n: int, rho: float | None) -> float | None:
     """Effective independent count for a panel of size n with mean pairwise rho."""
-    return n / (1 + (n - 1) * rho) if rho is not None else None
+    if rho is None:
+        return None
+    rho = min(max(rho, 0.0), 1.0)  # negative mean correlation is treated as independent
+    return n / (1 + (n - 1) * rho)
 
 
 def brier(probs: list[float], truth_idx: int) -> float:
     return sum((p - (1.0 if i == truth_idx else 0.0)) ** 2 for i, p in enumerate(probs))
+
+
+def drop_truth(v: list[float], truth_idx: int | None) -> list[float]:
+    """Belief vector over innocent suspects only. Agreeing on the right answer is not dependence:
+    two agents that each solve the case alone both put mass on the culprit. What matters for
+    aggregation is whether their errors (mass on innocents) line up."""
+    return v if truth_idx is None else [p for k, p in enumerate(v) if k != truth_idx]
+
+
+def plurality(agents: dict[int, list[float]], suspects: list[str]) -> dict[str, float]:
+    """Tie-aware vote shares: an agent whose top probability is shared by k suspects gives 1/k to each."""
+    votes: dict[str, float] = defaultdict(float)
+    for v in agents.values():
+        top = max(v)
+        tied = [k for k, p in enumerate(v) if abs(p - top) < 1e-9]
+        for k in tied:
+            votes[suspects[k]] += 1 / len(tied)
+    n = len(agents)
+    return {k: c / n for k, c in votes.items()}
+
+
+def cluster_boot_diff(groups: dict, reps: int, seed: int = 7):
+    """95% CI for mean(same) - mean(cross), resampling whole panels (pairs in one panel are not independent)."""
+    keys = [k for k, (a, b) in groups.items() if a or b]
+    rng = random.Random(seed)
+    out = []
+    for _ in range(reps):
+        pick = rng.choices(keys, k=len(keys))
+        sa = [x for k in pick for x in groups[k][0]]
+        cr = [x for k in pick for x in groups[k][1]]
+        if sa and cr:
+            out.append(sum(sa) / len(sa) - sum(cr) / len(cr))
+    out.sort()
+    return (out[int(0.025 * len(out))], out[int(0.975 * len(out))]) if out else None
 
 
 def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scenarios.json"):
@@ -101,6 +138,8 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
 
     # ---- per arm/cond/stage: correlations, n_eff, brier, band
     corr_by = defaultdict(list)
+    corr_err_by = defaultdict(list)
+    acc_by = defaultdict(list)  # panel-mean top pick correct, per arm/cond/stage
     brier_by = defaultdict(list)
     uniform_by = defaultdict(list)
     band = defaultdict(lambda: defaultdict(lambda: [0, 0]))  # cond -> bucket -> [n, wrong]
@@ -119,16 +158,17 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
             rho = mean(pair_corrs(agents))
             if rho is not None:
                 corr_by[(arm, cond, stage)].append(rho)
+            rho_err = mean(pair_corrs({i: drop_truth(v, truth_idx) for i, v in agents.items()}))
+            if rho_err is not None:
+                corr_err_by[(arm, cond, stage)].append(rho_err)
             if truth_idx is not None:
                 n_ag = len(agents)
                 mv = [sum(agents[i][k] for i in agents) / n_ag for k in range(len(suspects))]
                 brier_by[(arm, cond, stage, sc["kind"])].append(brier(mv, truth_idx))
                 uniform_by[(arm, cond, stage, sc["kind"])].append(brier([1 / len(suspects)] * len(suspects), truth_idx))
-                votes = defaultdict(int)
-                for i, v in agents.items():
-                    votes[suspects[max(range(len(v)), key=lambda k: v[k])]] += 1
-                top_sus, top_n = max(votes.items(), key=lambda kv: kv[1])
-                share = top_n / len(agents)
+                acc_by[(arm, cond, stage)].append(1.0 if max(range(len(mv)), key=lambda k: mv[k]) == truth_idx else 0.0)
+                shares = plurality(agents, suspects)
+                top_sus, share = max(shares.items(), key=lambda kv: kv[1])
                 bucket = "lt75" if share < 0.75 else ("75_90" if share < 0.90 else "ge90")
                 cell = band[(cond, stage, sc["kind"])][bucket]
                 cell[0] += 1
@@ -137,6 +177,14 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     metrics["correlation"] = {
         f"{a}/{c}/{s}": {"mean_rho": mean(v), "n_eff_panelsize": n_eff(panel_sizes.get((a, c), 5), mean(v)), "panels": len(v)}
         for (a, c, s), v in sorted(corr_by.items())
+    }
+    metrics["correlation_errors_only"] = {
+        f"{a}/{c}/{s}": {"mean_rho": mean(v), "n_eff_panelsize": n_eff(panel_sizes.get((a, c), 5), mean(v)), "panels": len(v)}
+        for (a, c, s), v in sorted(corr_err_by.items())
+    }
+    # "Lock before you talk" as a decision rule: the locked first reads ARE the vote.
+    metrics["accuracy_panel_mean"] = {
+        f"{a}/{c}/{s}": {"accuracy": mean(v), "panels": len(v)} for (a, c, s), v in sorted(acc_by.items())
     }
     metrics["brier"] = {
         f"{a}/{c}/{s}/{k}": {"panel_mean": mean(v), "uniform": mean(uniform_by[(a, c, s, k)]), "panels": len(v)}
@@ -151,6 +199,9 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     # ---- H3/H5: same- vs cross-family initial correlations in mixed arms
     # (any arm whose panel includes more than one distinct model)
     same_rhos, cross_rhos = [], []
+    by_panel: dict = defaultdict(lambda: ([], []))
+    same_err, cross_err = [], []
+    by_panel_err: dict = defaultdict(lambda: ([], []))
     for (arm, cond, seed, sid), stages in pan.items():
         m_suspects = [s["name"] for s in scenarios[sid]["suspects"]]
         agents = {
@@ -164,7 +215,15 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
             c = pearson(agents[i][1], agents[j][1])
             if c is None:
                 continue
-            (same_rhos if agents[i][0] == agents[j][0] else cross_rhos).append(c)
+            same = agents[i][0] == agents[j][0]
+            (same_rhos if same else cross_rhos).append(c)
+            by_panel[(arm, cond, seed, sid)][0 if same else 1].append(c)
+            t = scenarios[sid]["ground_truth"]
+            ti = m_suspects.index(t) if t else None
+            ce = pearson(drop_truth(agents[i][1], ti), drop_truth(agents[j][1], ti))
+            if ce is not None:
+                (same_err if same else cross_err).append(ce)
+                by_panel_err[(arm, cond, seed, sid)][0 if same else 1].append(ce)
     obs = (mean(same_rhos) or 0) - (mean(cross_rhos) or 0) if (same_rhos and cross_rhos) else None
     ci = None
     if same_rhos and cross_rhos:
@@ -179,7 +238,14 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     metrics["h3_same_vs_cross_family"] = {
         "same_family": {"n": len(same_rhos), "mean": mean(same_rhos)},
         "cross_family": {"n": len(cross_rhos), "mean": mean(cross_rhos)},
-        "diff": obs, "ci95": ci,
+        "diff": obs, "ci95_pairs_iid": ci,
+        "ci95_cluster_by_panel": cluster_boot_diff(by_panel, bootstrap_reps),
+        "errors_only": {
+            "same_family": {"n": len(same_err), "mean": mean(same_err)},
+            "cross_family": {"n": len(cross_err), "mean": mean(cross_err)},
+            "diff": (mean(same_err) - mean(cross_err)) if (same_err and cross_err) else None,
+            "ci95_cluster_by_panel": cluster_boot_diff(by_panel_err, bootstrap_reps),
+        },
     }
 
     out = RUNS / f"{label}_metrics.json"
@@ -192,6 +258,13 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     for (a, c, s), v in sorted(corr_by.items()):
         m = mean(v)
         print(f"{a+'/'+c:12} {s:8} {m:7.3f} {n_eff(panel_sizes.get((a,c),5), m):6.2f} {len(v):7}")
+    print("\n== effective N, errors only (truth suspect left out) ==")
+    for (a, c, st), v in sorted(corr_err_by.items()):
+        m = mean(v)
+        print(f"{a+'/'+c:12} {st:8} {m:7.3f} {n_eff(panel_sizes.get((a,c),5), m):6.2f} {len(v):7}")
+    print("\n== panel-mean accuracy (initial = locked first reads as the vote) ==")
+    for (a, c, st), v in sorted(acc_by.items()):
+        print(f"{a+'/'+c:12} {st:8} {mean(v):6.3f} {len(v):7}")
     print("\n== danger bands (non-placebo) ==")
     for (c, s, k), v in sorted(band.items()):
         for b, (n, w) in sorted(v.items()):
@@ -199,7 +272,9 @@ def analyze(label: str, bootstrap_reps: int = 2000, scenarios_file: str = "scena
     print("\n== H3 ==")
     h = metrics["h3_same_vs_cross_family"]
     print(f"same-family rho={h['same_family']['mean']}, cross-family rho={h['cross_family']['mean']}, "
-          f"diff={h['diff']} ci95={h['ci95']}")
+          f"diff={h['diff']} ci95(pairs iid)={h['ci95_pairs_iid']} ci95(cluster)={h['ci95_cluster_by_panel']}")
+    e = h["errors_only"]
+    print(f"errors only: diff={e['diff']} ci95(cluster)={e['ci95_cluster_by_panel']}")
     return metrics
 
 
