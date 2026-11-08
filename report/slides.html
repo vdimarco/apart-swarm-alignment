@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why AI Councils Collapse — plain-English slides</title>
+<style>
+:root{--bg:#0e1116;--ink:#ece9e2;--mut:#97a1b4;--acc:#e0a943;--card:#171c24}
+*{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:19px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+.slide{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 9vw;opacity:0;transition:opacity .35s}
+.slide.on{display:flex;opacity:1}
+.kick{color:var(--acc);text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;margin-bottom:.4em}
+h2{font-size:2.4rem;line-height:1.18;margin:.1em 0 .6em;max-width:22ch}
+.body{max-width:46rem}
+.body p{margin:.5em 0;color:#d6d3cb}
+.big{font-size:1.35rem;color:#fff!important}
+.dim{color:var(--mut)!important;font-size:.95rem}
+b{color:#fff}
+.pagenum{position:absolute;bottom:26px;right:34px;color:var(--mut);font-size:.85rem;font-variant-numeric:tabular-nums}
+#dots{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.dot{width:8px;height:8px;border-radius:50%;background:#333c4c;cursor:pointer}
+.dot.on{background:var(--acc)}
+.hint{position:fixed;bottom:22px;left:26px;color:var(--mut);font-size:.8rem}
+@media(max-width:600px){h2{font-size:1.7rem}.big{font-size:1.12rem}}
+</style></head><body>
+
+<section class="slide on" data-i="0">
+  <div class="kick">plain-English edition</div>
+  <h2>Why AI Councils Collapse</h2>
+  <div class="body"><p class='big'>We ran one weekend of experiments to answer a simple question: <b>if you put a team of AIs in charge of a decision, do you get many minds — or just one, many times?</b></p><p class='dim'>Apart Research Swarm Alignment Hackathon 2026 · Vaughn Dimarco</p></div>
+  <div class="pagenum">1 / 12</div>
+</section>
+<section class="slide" data-i="1">
+  <div class="kick">the hope</div>
+  <h2>Lots of AIs should be safer than one</h2>
+  <div class="body"><p>The bet in AI safety today: don't trust one model. Have <b>many agents check each other</b> — a council, a swarm, a town.</p><p class='big'>More voters should mean better judgment... <b>if each vote is actually independent.</b></p></div>
+  <div class="pagenum">2 / 12</div>
+</section>
+<section class="slide" data-i="2">
+  <div class="kick">the observation</div>
+  <h2>First clue: real AI towns hang their own</h2>
+  <div class="body"><p>In ~1,800 days of AI social-deduction games, eight players think like <b>fewer than two people</b> by day two — and like <b>one</b> by day five.</p><p>When the town is <b>75–90% sure</b> who the villain is, it's wrong <b>62%</b> of the time — and a wrongly-confident lynch drops the good team's win rate from 61% to 36%.</p><p class='dim'>The really dangerous consensus is the medium-confident one.</p></div>
+  <div class="pagenum">3 / 12</div>
+</section>
+<section class="slide" data-i="3">
+  <div class="kick">the test</div>
+  <h2>So we built a lab version</h2>
+  <div class="body"><p>We gave councils of AI models <b>mystery riddles</b>: 6 suspects, witness clues, exactly one provably right answer — we know the truth, so no hand-waving.</p><p><b>6 councilors, each a different AI family</b> (Qwen, GLM, DeepSeek, Gemma…), ~6,400 logged calls, every hypothesis written down before the first run.</p></div>
+  <div class="pagenum">4 / 12</div>
+</section>
+<section class="slide" data-i="4">
+  <div class="kick">finding one</div>
+  <h2>Before they talk, they already agree. After, they're identical</h2>
+  <div class="body"><p class='big'>Before any discussion, the six different AIs' guesses are <b>88% correlated</b>. After two rounds of talking: <b>~99%</b>.</p><p class='big'>Six thinkers → <b>1.02 independent thinkers</b> (of 6). That's the whole council.</p></div>
+  <div class="pagenum">5 / 12</div>
+</section>
+<section class="slide" data-i="5">
+  <div class="kick">finding two</div>
+  <h2>It's not collusion — it's shared DNA</h2>
+  <div class="body"><p>Copies of the same model agree <b>+0.08 more</b> than unrelated models <i>before saying a word</i> — the exact same gap we measured in the wild towns (+0.078).</p><p>They didn't coordinate. They <b>think alike because they're built alike.</b> Any collusion alarm that treats "they agree" as "they conspired" is broken by design.</p></div>
+  <div class="pagenum">6 / 12</div>
+</section>
+<section class="slide" data-i="6">
+  <div class="kick">boundary check</div>
+  <h2>We tried to make them confidently wrong — and couldn't</h2>
+  <div class="body"><p>We wrote harder and harder riddles — even ones only solvable by a single quiet clue. <b>The AIs got every single one right.</b></p><p>So the deadly "medium-agreement error band" isn't about logic being hard. It appears when evidence is <b>social</b>: bluffs, claims, things you can't verify.</p><p class='dim'>Honest result: that's a boundary on our finding, and we say so.</p></div>
+  <div class="pagenum">7 / 12</div>
+</section>
+<section class="slide" data-i="7">
+  <div class="kick">the fixes that failed</div>
+  <h2>Promise-keeping and dissenters don't help</h2>
+  <div class="body"><p><b>Fix A — lock your first vote publicly:</b> the council collapses the same way anyway (99% alike).</p><p><b>Fix B — assign one AI to always argue against the crowd:</b> it fights, then joins. In 30 of 30 cases the designated dissenter ends up believing the majority (ρ=0.995).</p><p class='dim'>Behavioral remedies: two for two, dead.</p></div>
+  <div class="pagenum">8 / 12</div>
+</section>
+<section class="slide" data-i="8">
+  <div class="kick">the one lever that works (a bit)</div>
+  <h2>Split the evidence — the 'jigsaw'</h2>
+  <div class="body"><p>Give each councilor only <b>part of the clues</b>. Their first guesses stop agreeing: 88% → 68% correlation.</p><p>But after they talk, most of that independence is handed back — and hidden clues cost accuracy (~87% vs 100%).</p><p class='big'>Diversity is <b>purchasable, partial, and priced</b>. Nothing we tried protects it through discussion.</p></div>
+  <div class="pagenum">9 / 12</div>
+</section>
+<section class="slide" data-i="9">
+  <div class="kick">the safety takeaway</div>
+  <h2>You can't detect the swarm by listening to it</h2>
+  <div class="body"><p>If you flag "talking alike" as collusion, your detector cries wolf on <b>100% of honest same-model agents — and 66–97% of honest strangers too</b>.</p><p class='big'>Calibrate the detector properly and it catches <b>no one</b>. Agreement carries no signal at the pair level.</p></div>
+  <div class="pagenum">10 / 12</div>
+</section>
+<section class="slide" data-i="10">
+  <div class="kick">the rule</div>
+  <h2>Count independence, not agents</h2>
+  <div class="body"><p class='big'>Before you trust an AI team's vote, ask: <b>"how many independent minds is this really?"</b></p><p>Measure the effective number (N_eff) — don't count seats. Use mixed families if you want diversity. Split information if you must — and pay the accuracy price.</p><p>And when a council is unanimous at 85%: that's the moment to worry, not relax.</p></div>
+  <div class="pagenum">11 / 12</div>
+</section>
+<section class="slide" data-i="11">
+  <div class="kick">receipts</div>
+  <h2>Everything above is reproducible</h2>
+  <div class="body"><p>Every number regenerates from raw call logs in the repo (11,402 records, pre-registered). Live data page: <b>lock-before-you-talk.vercel.app</b></p><p class='dim'>Why Councils Collapse · Swarm Alignment Hackathon 2026 · weekend build on Adaption-hosted open models</p></div>
+  <div class="pagenum">12 / 12</div>
+</section>
+<div id="dots"><span class="dot on" data-i="0"></span><span class="dot" data-i="1"></span><span class="dot" data-i="2"></span><span class="dot" data-i="3"></span><span class="dot" data-i="4"></span><span class="dot" data-i="5"></span><span class="dot" data-i="6"></span><span class="dot" data-i="7"></span><span class="dot" data-i="8"></span><span class="dot" data-i="9"></span><span class="dot" data-i="10"></span><span class="dot" data-i="11"></span></div>
+<div class="hint">← → keys / click</div>
+<script>
+let cur = 0;
+const slides = [...document.querySelectorAll('.slide')], dots = [...document.querySelectorAll('.dot')];
+function go(n) {
+  cur = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s, i) => s.classList.toggle('on', i === cur));
+  dots.forEach((d, i) => d.classList.toggle('on', i === cur));
+  history.replaceState(null, '', '#' + cur);
+}
+addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === ' ') go(cur + 1); if (e.key === 'ArrowLeft') go(cur - 1); });
+addEventListener('click', e => { if (e.target.classList.contains('dot')) go(+e.target.dataset.i); else if (!e.target.closest('a')) go(cur + 1); });
+const h = parseInt(location.hash.slice(1)); if (!isNaN(h)) go(h);
+</script>
+</body></html>
