@@ -22,7 +22,10 @@ needs the raw call logs. It amends the pre-registration in `docs/superpowers/spe
 
 The raw logs are now in `runs/`. `src/audit_stats.py` recomputes everything on the real data:
 
-- Errors-only agreement before and after free discussion: 0.857 → 0.863 (16 matched panels). The collapse claim is retracted.
+- Within-case agreement cannot show collapse. On error correlation across cases (`src/across_case.py`), discussion raises
+  dependence in all four arms (free discussion r 0.42 → 0.77, 5 pairs; two of four intervals exclude zero). The collapse
+  claim is revised, not retracted. A second review (`review/evidence-audit`, merged) reached the same measurement
+  conclusion and found the jigsaw split has only two distinct clue packets.
 - The duplicate arm's "same-model premium" compares Qwen 3.5 copies that are one-hot in 100% of first reads. It measures
   certainty, not shared beliefs, and is retracted. Even on the old measure, the panel-level interval is [0.068, 0.095].
 - Scoring the locked first reads as the vote: never worse than the discussed vote; with split evidence (jigsaw) 60/60

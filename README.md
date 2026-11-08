@@ -10,14 +10,14 @@ and agents told their first read is locked. We also split the evidence so each a
 
 ## Results (after the audit)
 
-- **The usual agreement measure fails here.** Correlating whole probability vectors scores six agents that each solve a
-  case alone as 1.02 effective forecasters. On errors only they score 5.86 of 6. On real panels, errors-only agreement
-  is already about 0.85 before talk, and free discussion barely changes it (0.857 → 0.863).
+- **Our first agreement measure was wrong.** Correlating probability lists within a case scores six agents that each
+  solve it alone as 1.02 effective forecasters. On the right quantity, error correlation across cases, discussion does
+  make errors line up in all four arms (free discussion r 0.42 → 0.77; N_eff about 2–3 → 1.2–1.8), on 5 to 14 model pairs.
 - **With split evidence, pooling first reads beats discussion.** The average of locked first reads is right in 60 of
   60 panels; the discussed vote in 53 (exact McNemar p = 0.016; 5 of 30 cases fail, p = 0.06 by case). Discussion raises
   individual accuracy from 64% to 80% but lowers the panel's.
-- **Retracted:** deliberation collapse, the +0.082 same-model premium (a certainty artifact), the failure of locked
-  reads, and the collusion-detector result. See [`AUDIT.md`](AUDIT.md) and Appendix B of the report.
+- **Retracted or revised:** the +0.082 same-model premium (a certainty artifact), the failure of locked reads, the
+  collusion-detector result, and the size and evidence for deliberation collapse. See [`AUDIT.md`](AUDIT.md) and Appendix B of the report.
 
 Companion submission: [Why AI Towns Hang Their Own](https://github.com/vdimarco/why-ai-towns-hang-their-own), herding
 in 538 games of AI social deduction (third-party Clocktower Bench data, analysis done this weekend).

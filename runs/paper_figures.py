@@ -19,14 +19,15 @@ a1.bar([0 - .18, 1 - .18], [1.02, 1.00], .36, color=C["delib"], label="Full vect
 a1.bar([0 + .18, 1 + .18], [5.86, 1.00], .36, color=C["pool"], label="Errors only (audit)")
 a1.set_xticks([0, 1], labs); a1.set_ylabel("N_eff (of 6)"); a1.set_ylim(0, 8.5); a1.set_yticks([0, 2, 4, 6]); a1.set_title("Simulated panels", fontsize=9)
 a1.legend(frameon=False, fontsize=7.5, loc="upper right")
+X = {d["arm"]: d for d in json.loads((RUNS / "across_case.json").read_text())}
 arms = [("mg/M6/C2", "Free\ndiscussion"), ("mg/M6/C3", "Locked\nframing"), ("push_da/M6DA/C2", "Devil's\nadvocate"), ("pushJ/M6J/C2", "Jigsaw")]
 xs = range(len(arms))
-a2.bar([x - .18 for x in xs], [A[k]["errors_only_rho_initial"] for k, _ in arms], .36, color=C["light"], label="Before talk")
-a2.bar([x + .18 for x in xs], [A[k]["errors_only_rho_final"] for k, _ in arms], .36, color=C["pool"], label="After talk")
+a2.bar([x - .18 for x in xs], [X[k]["r_initial"] for k, _ in arms], .36, color=C["light"], label="Before talk")
+a2.bar([x + .18 for x in xs], [X[k]["r_final"] for k, _ in arms], .36, color=C["pool"], label="After talk")
 for x, (k, _) in zip(xs, arms):
-    a2.text(x, 1.01, f"n={A[k]['errors_only_matched_panels']}", ha="center", fontsize=7, color="#555")
-a2.set_xticks(list(xs), [l for _, l in arms]); a2.set_ylim(0, 1.1); a2.set_ylabel("Errors-only agreement (r)")
-a2.set_title("Real panels, matched", fontsize=9); a2.legend(frameon=False, fontsize=7.5, loc="lower right")
+    a2.text(x, 0.84, f"{X[k]['pairs']} pairs", ha="center", fontsize=7, color="#555")
+a2.set_xticks(list(xs), [l for _, l in arms]); a2.set_ylim(0, 1.15); a2.set_yticks([0, .2, .4, .6, .8, 1.0]); a2.set_ylabel("Error correlation across cases (r)")
+a2.set_title("Real panels, same model pairs", fontsize=9); a2.legend(frameon=False, fontsize=7.5, loc="upper left", ncol=2)
 f.tight_layout(); f.savefig(out / "fig1_measure.png", dpi=220)
 
 # Figure 2: pooled locked reads vs deliberated vote, and individual accuracy.
