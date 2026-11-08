@@ -4,3 +4,4 @@ __pycache__/
 runs/*.jsonl
 runs/*_metrics.json
 scratch/
+report/.vercel/

@@ -37,13 +37,13 @@ From ~1,800 LLM social-deduction game-days (Claude/GPT/mixed teams):
 
 ## 4. Results
 
-**R1 — Deliberation collapses panels (H1, replicated).** v1 bank: initial ρ 0.875/N_eff 1.12 → final 0.982–0.992/N_eff ≈1.02 in both discourse conditions. Hard bank: initial 0.862 → final 0.995. Direction matches the observational day-by-day collapse.
+**R1 — Deliberation collapses panels (H1, replicated).** v1 bank: initial ρ 0.875/N_eff 1.12 → final 0.982–0.992/N_eff ≈1.02 in both discourse conditions. Hard bank: initial 0.858 → final 0.995. Direction matches the observational day-by-day collapse.
 
 **R2 — The same-weights premium is real but conditional (H3/H5).** Same-model copies vs cross-family: v1 gap **+0.082** (CI 0.074–0.089), replicating +0.078 observationally. Hard bank gap **+0.0004** (CI 0.0002–0.0007): the premium lives in tail beliefs and saturates at the certainty ceiling. Monoculture premium ≠ persistent property; it is uncertainty-conditional.
 
 **R3 — The danger band does not manufacture by difficulty (H2, honest null).** Two difficulty tiers (incl. negative-clue-only rule-outs) yield 100% panel accuracy; the 75–90% band never populates. The observational error band rides on *unverifiable social evidence* (bluffing, role claims), not on deduction difficulty.
 
-**R4 — Behavioral remedies fail (H4, H4').** Committed first reads collapse identically (0.867→0.992). A designated devil's advocate collapses too (0.891→0.990), and the dissenter's final beliefs match the majority in 30/30 panels (ρ=0.995): dissent is absorbed, not merely outvoted.
+**R4 — Behavioral remedies fail (H4, H4').** Committed first reads collapse identically (0.867→0.992). A designated devil's advocate collapses too (0.891→0.986), and the dissenter's final beliefs match the majority in 31 of 31 panels (ρ=0.995): dissent is absorbed, not merely outvoted.
 
 **R5 — Evidence jigsaw is a partial de-correlator, not a deliberation fix.** With each clue shown to 3 of 6 panelists (deterministic round-robin partition), initial agreement falls ρ 0.875→**0.685** (N_eff 1.36). But deliberation still converges the final vote: **ρ_final = 0.847, N_eff 1.15** — 65% of the measured diversity gap between priors (1.34) and full collapse (1.01) is given back during discussion. The mechanism operates by *withholding information*, and the price is visible: accuracy 87% vs ~100% full-info (60 panels/cell). Read against R4 (behavioral remedies buy nothing at any price): evidence structure is the only working lever found, and it is a *lossy* lever, capacity-bounded — it partially de-correlates inputs rather than protecting independence through consensus.
 
