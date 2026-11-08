@@ -1,0 +1,67 @@
+[
+  {
+    "arm": "mg/M6/C2",
+    "panels": 60,
+    "mean_agents": 4.0,
+    "pooled": 59,
+    "discussed": 59,
+    "pool_only": 1,
+    "discussed_only": 1,
+    "mcnemar_p": 1.0,
+    "empty_statements": 43,
+    "statements": 360,
+    "resume_bug_panels": 5
+  },
+  {
+    "arm": "mg/M6/C3",
+    "panels": 60,
+    "mean_agents": 4.12,
+    "pooled": 58,
+    "discussed": 58,
+    "pool_only": 2,
+    "discussed_only": 2,
+    "mcnemar_p": 1.0,
+    "empty_statements": 28,
+    "statements": 360,
+    "resume_bug_panels": 2
+  },
+  {
+    "arm": "push_da/M6DA/C2",
+    "panels": 57,
+    "mean_agents": 4.12,
+    "pooled": 57,
+    "discussed": 57,
+    "pool_only": 0,
+    "discussed_only": 0,
+    "mcnemar_p": 1.0,
+    "empty_statements": 67,
+    "statements": 342,
+    "resume_bug_panels": 0
+  },
+  {
+    "arm": "pushJ/M6J/C2",
+    "panels": 60,
+    "mean_agents": 4.38,
+    "pooled": 57,
+    "discussed": 53,
+    "pool_only": 6,
+    "discussed_only": 2,
+    "mcnemar_p": 0.289,
+    "empty_statements": 69,
+    "statements": 360,
+    "resume_bug_panels": 0
+  },
+  {
+    "arm": "push_hard/M6H/C2",
+    "panels": 23,
+    "mean_agents": 5.04,
+    "pooled": 23,
+    "discussed": 23,
+    "pool_only": 0,
+    "discussed_only": 0,
+    "mcnemar_p": 1.0,
+    "empty_statements": 12,
+    "statements": 138,
+    "resume_bug_panels": 0
+  }
+]

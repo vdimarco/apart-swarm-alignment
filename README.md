@@ -4,7 +4,7 @@ Swarm Alignment Hackathon 2026 (Apart Research and AI Alignment Foundation) · T
 
 **Report:** [`report/Lock_Before_You_Talk.pdf`](report/Lock_Before_You_Talk.pdf) · live page: https://lock-before-you-talk.vercel.app
 
-Panels of six open-weight models from six families solve 30 fictional whodunit cases with known answers. We compare
+Panels of six open-weight models from four families solve 30 fictional whodunit cases with known answers. We compare
 three ways to decide: the average of each agent's locked first read, the average after two rounds of discussion,
 and agents told their first read is locked. We also split the evidence so each agent sees half the clues.
 
@@ -13,9 +13,9 @@ and agents told their first read is locked. We also split the evidence so each a
 - **Our first agreement measure was wrong.** Correlating probability lists within a case scores six agents that each
   solve it alone as 1.02 effective forecasters. On the right quantity, error correlation across cases, discussion does
   make errors line up in all four arms (free discussion r 0.42 → 0.77; N_eff about 2–3 → 1.2–1.8), on 5 to 14 model pairs.
-- **With split evidence, pooling first reads beats discussion.** The average of locked first reads is right in 60 of
-  60 panels; the discussed vote in 53 (exact McNemar p = 0.016; 5 of 30 cases fail, p = 0.06 by case). Discussion raises
-  individual accuracy from 64% to 80% but lowers the panel's.
+- **With split evidence, pooling first reads looks better, but the evidence is suggestive.** All available locked first
+  reads: 60 of 60; discussed vote: 53 (p = 0.016). On the same agents at both stages: 57 vs 53 (p = 0.29). 19% of
+  jigsaw discussion statements were empty (reasoning truncation). See `python -m src.matched`.
 - **Retracted or revised:** the +0.082 same-model premium (a certainty artifact), the failure of locked reads, the
   collusion-detector result, and the size and evidence for deliberation collapse. See [`AUDIT.md`](AUDIT.md) and Appendix B of the report.
 
